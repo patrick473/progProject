@@ -9,18 +9,37 @@ except ImportError:
 
 #creeert het hoofdscherm
 root = Tk()
-
+#zet de achtergrondkleur van hoofdscherm
+root.configure(background='gold')
 #button om je fiets mee te registreren
-registrationButton = Button(master=root, text='Registreer je fiets.',height=2,width=20)
+registrationButton = Button(master=root,
+                            text='Registreer je fiets.',
+                            height=2,
+                            width=20,
+                            background='blue',
+                            foreground='white')
+
 registrationButton.grid(row=0, column=0, padx= 20,pady=10)
 
 #button om je fiets mee te stallen
-storingButton = Button(master=root, text='Stal je fiets.',height=2,width=20)
-storingButton.grid(row=0, column=1, padx= 20,pady=10)
+storingButton = Button(master=root,
+                    text='Stal je fiets.',
+                    height=2,
+                    width=20,
+                    background='blue',
+                    foreground='white')
+
+storingButton.grid(row=1, column=0, padx= 20,pady=10)
 
 #button om je fiets op te halen of om informatie op te vragen
-collectInformationButton = Button(master=root, text='Ophalen van je fiets/\ninformatie opvragen.',height=2,width=20)
-collectInformationButton.grid(row=0, column=2, padx= 20,pady=10)
+collectInformationButton = Button(master=root,
+                                  text='Ophalen van je fiets/\ninformatie opvragen.',
+                                  height=2,
+                                  width=20,
+                                  background='blue',
+                                  foreground='white')
+
+collectInformationButton.grid(row=2, column=0, padx= 20,pady=10)
 
 
 
