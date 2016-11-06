@@ -25,6 +25,7 @@ def collectInfo():
 def registerBike():
     startFrame.grid_remove()
     returnFrame.grid()
+
 def returnMenu():
     returnFrame.grid_remove()
     startFrame.grid()
@@ -83,9 +84,14 @@ returnFrame = Frame(root)
 returnFrame.grid(row=98,column=0)
 returnFrame.configure(background='gold')
 returnFrame.grid_remove()
+
+registerFrame = Frame(root)
+registerFrame.grid(row=0,column=0)
+registerFrame.configure(background='gold')
+registerFrame.grid_remove()
 #widgets hoofdscherm
 #buttons
-#button om je fiets mee te registreren
+#button om naar het scherm te gaan waar je je fiets  registreert
 registrationButton = Button(master=startFrameRegister,
                             text='Registreer je fiets.',
                             height=3,
@@ -96,7 +102,7 @@ registrationButton = Button(master=startFrameRegister,
 
 registrationButton.pack( side=LEFT,padx= 20,pady=10)
 
-#button om je fiets mee te stallen
+#button om naar menu te gaan waar jr je fiets mee te stallen
 storingButton = Button(master=startFrameStall,
                     text='Stal je fiets.',
                     height=3,
@@ -107,7 +113,7 @@ storingButton = Button(master=startFrameStall,
 
 storingButton.pack(side=LEFT,padx= 20,pady=10)
 
-#button om je fiets op te halen of om informatie op te vragen
+#button om naar het menu te gaan waar je je fiets op te halen of om informatie op te vragen
 collectInformationButton = Button(master=startFrameRetrieve,
                                   text='Ophalen van je fiets/\ninformatie opvragen.',
                                   height=3,
@@ -117,7 +123,7 @@ collectInformationButton = Button(master=startFrameRetrieve,
                                   command=collectInfo)
 
 collectInformationButton.pack( side=LEFT,padx= 20,pady=10)
-#button die labels weergeeft als hulpmiddel bij de buttons
+#button die labels weergeeft als hulpmiddel bij de buttons op start menu
 startHelpButton = Button(master=startFrameHelp,
                          text='?',
                          height=3,
@@ -167,6 +173,11 @@ exitLabel = Label(master=exitFrame,
                   width=50)
 exitLabel.pack(side=RIGHT,padx=20,pady=10)
 exitLabel.pack_forget()
+
+#registerscherm widgets
+
+#labels
+naamRegisterLabe
 #overige buttons
 
 #button die teruggaat naar het startscherm
