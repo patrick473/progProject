@@ -25,10 +25,12 @@ def collectInfo():
 def registerBike():
     startFrame.grid_remove()
     returnFrame.grid()
+    registerFrame.grid()
 
 def returnMenu():
     returnFrame.grid_remove()
     startFrame.grid()
+    registerFrame.grid_remove()
 def helpStartFrame():
     global helpStartFrameCounter
 
@@ -84,11 +86,36 @@ returnFrame = Frame(root)
 returnFrame.grid(row=98,column=0)
 returnFrame.configure(background='gold')
 returnFrame.grid_remove()
-
+#register scherm
 registerFrame = Frame(root)
 registerFrame.grid(row=0,column=0)
 registerFrame.configure(background='gold')
 registerFrame.grid_remove()
+#register frames
+voornaamRegisterFrame = Frame(registerFrame)
+voornaamRegisterFrame.grid(row=0,column=0)
+voornaamRegisterFrame.configure(background='gold')
+
+achternaamRegisterFrame = Frame(registerFrame)
+achternaamRegisterFrame.grid(row=1,column=0)
+achternaamRegisterFrame.configure(background='gold')
+
+telefoonRegisterFrame= Frame(registerFrame)
+telefoonRegisterFrame.grid(row=2,column=0)
+telefoonRegisterFrame.configure(background='gold')
+
+emailRegisterFrame = Frame(registerFrame)
+emailRegisterFrame.grid(row=3,column=0)
+emailRegisterFrame.configure(background='gold')
+
+kleurFietsRegisterFrame = Frame(registerFrame)
+kleurFietsRegisterFrame.grid(row=5,column=0)
+kleurFietsRegisterFrame.configure(background='gold')
+
+geboortedatumRegisterFrame = Frame(registerFrame)
+geboortedatumRegisterFrame.grid(row=4,column=0)
+geboortedatumRegisterFrame.configure(background='gold')
+
 #widgets hoofdscherm
 #buttons
 #button om naar het scherm te gaan waar je je fiets  registreert
@@ -177,7 +204,76 @@ exitLabel.pack_forget()
 #registerscherm widgets
 
 #labels
-naamRegisterLabe
+voornaamRegisterLabel = Label(master=voornaamRegisterFrame,
+                              text='voornaam:',
+                              background='gold',
+                              height=1,
+                              width=25)
+voornaamRegisterLabel.pack(side=LEFT,pady=10)
+
+achternaamRegisterLabel = Label(master=achternaamRegisterFrame,
+                                text='achternaam:',
+                                background='gold',
+                                height=1,
+                                width=25)
+achternaamRegisterLabel.pack(side=LEFT,pady=10)
+
+telefoonRegisterLabel = Label(master=telefoonRegisterFrame,
+                              text='telefoonnummer:',
+                              background='gold',
+                              height=1,
+                              width=25)
+telefoonRegisterLabel.pack(side=LEFT,pady=10)
+emailRegisterLabel = Label(master=emailRegisterFrame,
+                           text='email:',
+                           background='gold',
+                           height=1,
+                           width=25)
+emailRegisterLabel.pack(side=LEFT,pady=10)
+
+kleurFietsRegisterLabel = Label(master=kleurFietsRegisterFrame,
+                                text='Kleur van je fiets:',
+                                background='gold',
+                                height=1,
+                                width=25)
+kleurFietsRegisterLabel.pack(side=LEFT,pady=10)
+
+geboortedatumRegisterLabel = Label(master=geboortedatumRegisterFrame,
+                                   text='Geboortedatum(DD/MM/YY):',
+                                   background='gold',
+                                   height=1,
+                                   width=25)
+geboortedatumRegisterLabel.pack(side=LEFT,pady=10)
+
+#register text boxes
+voornaamRegisterText = Text(master=voornaamRegisterFrame,
+                            height=1,
+                            width=30)
+voornaamRegisterText.pack(side=RIGHT)
+
+achternaamRegisterText = Text(master=achternaamRegisterFrame,
+                              height=1,
+                              width=30)
+achternaamRegisterText.pack(side=RIGHT)
+
+telefoonRegisterText = Text(master=telefoonRegisterFrame,
+                            height=1,
+                            width=30)
+telefoonRegisterText.pack(side=RIGHT)
+
+emailRegisterText= Text(master=emailRegisterFrame,
+                        height=1,
+                        width=30)
+emailRegisterText.pack(side=RIGHT)
+geboortedatumRegisterText = Text(master=geboortedatumRegisterFrame,
+                                 height=1,
+                                 width=30)
+geboortedatumRegisterText.pack(side=RIGHT)
+
+kleurFietsRegisterText = Text(master=kleurFietsRegisterFrame,
+                              height=1,
+                              width=30)
+kleurFietsRegisterText.pack(side=RIGHT)
 #overige buttons
 
 #button die teruggaat naar het startscherm
