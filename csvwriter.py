@@ -1,12 +1,35 @@
 import csv
+import time
 
-def fietsNummerStallen(invoer):
+def fietsOphalenCSV(fietsnummer):
     try:
-        with open('Stalling.csv', 'w', newline = '') as myCSVFile:
-            file = csv.writer(myCSVFile, delimiter = ';')
-            file.writerow(invoer)
+        rows=[]
+        with open('Stalling.csv', 'r', newline = '') as myCSVFile:
+            file = csv.reader(myCSVFile, delimiter = ';')
+            for row in file:
+                rows.append(row)
     except FileNotFoundError:
-        return False
+        pass
+    with open('Stalling.csv', 'w', newline='') as myCSVFile:
+        writer = csv.writer(myCSVFile, delimiter=';')
+        for row in rows:
+            if row[0] != fietsnummer:
+                writer.writerow(row)
+
+def fietsStallenCSV(fietsnummer):
+    try:
+        rows=[]
+        with open('Stalling.csv', 'r', newline = '') as myCSVFile:
+            file = csv.reader(myCSVFile, delimiter = ';')
+            for row in file:
+                rows.append(row)
+    except FileNotFoundError:
+        pass
+    rows.append([fietsnummer, time.strftime('%d/%m/%Y at %H:%M:%S')])
+    with open('Stalling.csv', 'w', newline='') as myCSVFile:
+        writer = csv.writer(myCSVFile, delimiter=';')
+        for row in rows:
+            writer.writerow(row)
 
 def fietsGestald(fietsnummer):
     with open('Stalling.csv', 'r', newline='') as myCSVFile:

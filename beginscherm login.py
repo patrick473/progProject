@@ -72,8 +72,6 @@ def confirmLogin():
         gegevens.append(entry.get())
     loggedIn = checkLogin(gegevens[0],gegevens[1])
     if loggedIn == True:
-        for entry in entries:
-            entry.delete(0,END)
         loginFrame.grid_remove()
         loggedInFrame.grid(padx=30, pady=30)
         if fietsGestald(gegevens[0]) == True:
@@ -84,13 +82,17 @@ def confirmLogin():
         wrongLoginLabel.grid(row=0, column=2, pady=5)
 
 def fietsStallen():
+    fietsStallenCSV(fietsNummerLoginEntry.get())
     homebutton()
     loggedInFrame.grid_remove()
     fietsStallenFrame.grid(padx=30,pady=30)
 
 def confirmBikeNumber():
-    fietsNummer = fietsNummerEntry.get()
+    fietsNummer = fietsNummerLoginEntry.get()
     fietsNummerStallen(fietsNummer)
+
+def fietsOphalen():
+    fietsOphalenCSV(fietsNummerLoginEntry.get())
 
 # Display help widgets
 def menuHelp():
@@ -270,7 +272,8 @@ ophaalButton = Button(master=loggedInFrame,
                       height=3,
                       width=30,
                       bg=blue,
-                      fg=white)
+                      fg=white,
+                      command=fietsOphalen)
 
 # Info button
 infoButton = Button(master=loggedInFrame,
