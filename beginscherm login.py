@@ -67,11 +67,10 @@ def login():
 def confirmLogin():
     fietsNummer = fietsNummerLoginEntry.get()
     password = passwordLoginEntry.get()
-    print(fietsNummer, 'nummer')
-    print(password, 'password')
-    print(checkLogin(fietsNummer, password))
-
-
+    loggedIn = checkLogin(fietsNummer,password)
+    if loggedIn == True:
+        loginFrame.grid_remove()
+        loggedInFrame.grid(padx=30, pady=30)
 
 def fietsStallen():
     homebutton()
@@ -111,13 +110,17 @@ mainFrame.grid(padx=30, pady=30)
 registrationFrame = Frame(root)
 registrationFrame.config(bg=gold)
 
-# login window widgets frame
+# Login window widgets frame
 loginFrame = Frame(root)
 loginFrame.config(bg=gold)
 
-# fiets stallen window widgets frame
+# Fiets stallen window widgets frame
 fietsStallenFrame = Frame(root)
-fietsStallenFrame.config(bg='gold')
+fietsStallenFrame.config(bg=gold)
+
+# Logged in Frame
+loggedInFrame = Frame(root)
+fietsStallenFrame.config(bg=gold)
 
 ########## Main window widgets ##########
 
@@ -252,6 +255,8 @@ confirmLoginButton = Button(master=loginFrame,
                             fg=white,
                             command=confirmLogin)
 confirmLoginButton.grid(row=2, column=1, pady=5)
+
+########## Logged in widgets ##########
 
 ########## Fiets stallen widgets ###########
 

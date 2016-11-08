@@ -29,7 +29,6 @@ def checkLogin(fietsNummer, password):
     except FileNotFoundError:
         return False
     for row in rows:
-        print(row[6], row[7])
         if row[6] == password and row[7] == fietsNummer:
             return True
         else:
