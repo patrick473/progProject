@@ -4,7 +4,7 @@ try:
 except ImportError:
     from Tkinter import *
 
-from csvwriter import gebruikerToevoegen, checkLogin
+from csvwriter import gebruikerToevoegen, checkLogin,fietsNummerStallen
 #statements en variabelen
 helpDisplayed = False
 gold='#ffd700'
@@ -77,6 +77,9 @@ def fietsStallen():
     loggedInFrame.grid_remove()
     fietsStallenFrame.grid(padx=30,pady=30)
 
+def confirmBikeNumber():
+    fietsNummer = fietsNummerEntry.get()
+    fietsNummerStallen(fietsNummer)
 # Display help widgets
 def menuHelp():
     global helpDisplayed
@@ -263,7 +266,15 @@ infoButton.grid(row=2,column=0,pady=5)
 fietsNummerEntry = Entry(master=fietsStallenFrame,
                          width=30)
 fietsNummerEntry.grid(row=0, column=2, pady=5)
-
+##### stal button #####
+fietsNummerBevestigingButton = Button(master=fietsStallenFrame,
+                                    text='Bevestiggen',
+                                    height=3,
+                                    width=30,
+                                    bg=blue,
+                                    fg=white,
+                                    command=confirmBikeNumber)
+fietsNummerBevestigingButton.grid(row=2,column=2,pady=5)
 # Stall label
 fietsNummerLabel = Label(master=fietsStallenFrame,
                         text='Uw fietsnummer:',

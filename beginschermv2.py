@@ -4,7 +4,7 @@ try:
 except ImportError:
     from Tkinter import *
 
-from csvwriter import fietsToevoegen
+from csvwriter import gebruikerToevoegen
 #statements en variabelen
 helpDisplayed = False
 gold='#ffd700'
