@@ -5,8 +5,14 @@ except ImportError:
     from Tkinter import *
 
 from csvwriter import fietsToevoegen
-
-helpDisplayed = False    
+#statements en variabelen
+helpDisplayed = False
+gold='#ffd700'
+blue='#0000FF'
+white='#FFFFFF'
+grey='#666666'
+red='#FF0000'
+black='#000000'
 # Functions
 
 # Close main window
@@ -27,8 +33,8 @@ def homebutton():
                           text='Hoofdmenu',
                           height=3,
                           width=30,
-                          bg='blue',
-                          fg='white',
+                          bg=blue,
+                          fg=white,
                           command=hoofdmenu)
     returnButton.place(rely=1, relx=0, x=30, y=-30, anchor=SW)
 
@@ -67,7 +73,7 @@ def menuHelp():
         
 # Main window
 root = Tk()
-root.config(bg='gold')
+root.config(bg=gold)
 root.overrideredirect(True)
 root.geometry('{}x{}'.format(root.winfo_screenwidth(),
                              root.winfo_screenheight()))
@@ -76,12 +82,12 @@ root.geometry('{}x{}'.format(root.winfo_screenwidth(),
 
 # Main window widgets frame
 mainFrame = Frame(root)
-mainFrame.config(bg='gold')
+mainFrame.config(bg=gold)
 mainFrame.grid(padx=30, pady=30)
 
 # Registration window widgets frame
 registrationFrame = Frame(root)
-registrationFrame.config(bg='gold')
+registrationFrame.config(bg=gold)
 
 ########## Main window widgets ##########
 
@@ -90,8 +96,8 @@ registrationButton = Button(master=mainFrame,
                             text='Registreer je fiets.',
                             height=3,
                             width=30,
-                            bg='blue',
-                            fg='white',
+                            bg=blue,
+                            fg=white,
                             command=register)
 registrationButton.grid(row=0,column=0, pady=5)
 
@@ -100,8 +106,8 @@ stallingButton = Button(master=mainFrame,
                        text='Stal je fiets.',
                        height=3,
                        width=30,
-                       bg='blue',
-                       fg='white')
+                       bg=blue,
+                       fg=white)
 stallingButton.grid(row=1,column=0, pady=5)
 
 # Info button
@@ -109,8 +115,8 @@ infoButton = Button(master=mainFrame,
                            text='Ophalen van je fiets/\ninformatie opvragen.',
                            height=3,
                            width=30,
-                           background='blue',
-                           foreground='white')
+                           background=blue,
+                           foreground=white)
 infoButton.grid(row=2,column=0,pady=5)
 
 # Help button
@@ -118,8 +124,8 @@ helpButton = Button(master=mainFrame,
                     text='?',
                     height=3,
                     width=30,
-                    bg='blue',
-                    fg='white',
+                    bg=blue,
+                    fg=white,
                     command=menuHelp)
 helpButton.grid(row=3,column=0,pady=5)
 
@@ -128,45 +134,45 @@ exitButton = Button(master=root,
                     text='Afsluiten',
                     height=3,
                     width=30,
-                    bg='red',
-                    fg='white',
+                    bg=red,
+                    fg=white,
                     command=close)
 exitButton.place(rely=1, relx=1, x=-30, y=-30, anchor=SE)
 
 # Register Label
 registerLabel = Label(master=mainFrame,
                       text='Gebruik deze knop om je fiets te registreren in het systeem',
-                      background = 'gold',
+                      background = gold,
                       height=3,
                       width=80,
-                      foreground = 'black',
+                      foreground = black,
                       anchor=W)
 
 # Stall label
 stallLabel = Label(master=mainFrame,
                    text='Gebruik deze knop om je fiets te stallen',
-                   background = 'gold',
+                   background = gold,
                    height=3,
                    width=80,
-                   foreground = 'black',
+                   foreground = black,
                    anchor=W)
 
 # Collect label
 collectLabel = Label(master=mainFrame,
                      text='Gebruik deze knop om je fiets op te halen of om informatie op te vragen',
-                     background = 'gold',
+                     background = gold,
                      height=3,
                      width=80,
-                     foreground = 'black',
+                     foreground = black,
                      anchor=W)
 
 # Exit label
 exitLabel = Label(master=mainFrame,
                   text='Gebruik deze knop om af te sluiten',
-                  background = 'gold',
+                  background = gold,
                   height=3,
                   width=30,
-                  foreground = 'black',
+                  foreground = black,
                   anchor=W)
 ########## Registration widgets ##########
 
@@ -175,7 +181,7 @@ voornaamLabel = Label(master=registrationFrame,
                       text='Voornaam:',
                       anchor=W,
                       width=30,
-                      bg='gold')
+                      bg=gold)
 voornaamLabel.grid(row=0, column=0, pady=5)
 
 # Achternaam Label
@@ -183,7 +189,7 @@ achternaamLabel = Label(master=registrationFrame,
                         text='Achternaam:',
                         anchor=W,
                         width=30,
-                        bg='gold')
+                        bg=gold)
 achternaamLabel.grid(row=1, column=0, pady=5)
 
 # Geboortedatum label
@@ -191,7 +197,7 @@ geboortedatumLabel = Label(master=registrationFrame,
                            text='Geboortedatum (DD/MM/YYYY):',
                            anchor=W,
                            width=30,
-                           bg='gold')
+                           bg=gold)
 geboortedatumLabel.grid(row=2, column=0, pady=5)
 
 # Telefoonnummer label
@@ -199,7 +205,7 @@ telefoonLabel = Label(master=registrationFrame,
                       text='Telefoonnummer:',
                       anchor=W,
                       width=30,
-                      bg='gold')
+                      bg=gold)
 telefoonLabel.grid(row=3, column=0, pady=5)
 
 # E-mailadres label
@@ -207,7 +213,7 @@ emailLabel = Label(master=registrationFrame,
                    text='E-mailadres:',
                    anchor=W,
                    width=30,
-                   bg='gold')
+                   bg=gold)
 emailLabel.grid(row=4, column=0, pady=5)
 
 # Kleur van fiets label
@@ -215,8 +221,9 @@ kleurLabel = Label(master=registrationFrame,
                    text='Kleur van je fiets:',
                    anchor=W,
                    width=30,
-                   bg='gold')
+                   bg=gold)
 kleurLabel.grid(row=5, column=0, pady=5)
+
 
 # Voornaam entry
 voornaamEntry = Entry(master=registrationFrame,
@@ -253,8 +260,8 @@ returnButton = Button(master=registrationFrame,
                       text='Bevestigen',
                       height=3,
                       width=30,
-                      background='blue',
-                      foreground='white',
+                      background=blue,
+                      foreground=white,
                       command=confirmRegistration)
 returnButton.grid(row=99,column=1,pady=5)
 
