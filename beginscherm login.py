@@ -4,7 +4,7 @@ try:
 except ImportError:
     from Tkinter import *
 
-from csvwriter import gebruikerToevoegen, checkLogin,fietsNummerStallen
+from csvwriter import *
 
 #statements en variabelen
 helpDisplayed = False
@@ -71,6 +71,10 @@ def confirmLogin():
     if loggedIn == True:
         loginFrame.grid_remove()
         loggedInFrame.grid(padx=30, pady=30)
+        if fietsGestald(fietsNummer) == True:
+            ophaalButton.grid(row=2,column=0, pady=5)
+        else:
+            stallingButton.grid(row=2,column=0, pady=5)
 
 def fietsStallen():
     homebutton()
@@ -239,39 +243,46 @@ confirmLoginButton.grid(row=2, column=1, pady=5)
 ########## Logged in widgets ##########
 # Stalling button
 stallingButton = Button(master=loggedInFrame,
-                       text='Stal je fiets.',
+                       text='Fiets stallen',
                        command=fietsStallen,
                        height=3,
                        width=30,
                        bg=blue,
                        fg=white)
-stallingButton.grid(row=4,column=0, pady=5)
+
+# Ophaal button
+ophaalButton = Button(master=loggedInFrame,
+                      text='Fiets ophalen',
+                      height=3,
+                      width=30,
+                      bg=blue,
+                      fg=white)
 
 # Info button
 infoButton = Button(master=loggedInFrame,
-                           text='Ophalen van je fiets/\ninformatie opvragen.',
+                           text='Jouw gegevens',
                            height=3,
                            width=30,
                            background=blue,
                            foreground=white)
-infoButton.grid(row=2,column=0,pady=5)
+infoButton.grid(row=1,column=0,pady=5)
 
 ########## Fiets stallen widgets ###########
 ##### stal button #####
 fietsNummerBevestigingButton = Button(master=fietsStallenFrame,
-                                    text='Bevestiggen',
+                                    text='Bevestigen',
                                     height=3,
                                     width=30,
                                     bg=blue,
                                     fg=white,
                                     command=confirmBikeNumber)
 fietsNummerBevestigingButton.grid(row=2,column=2,pady=5)
-# Stall entry
+# Stal entry
 fietsNummerEntry = Entry(master=fietsStallenFrame,
                          width=30)
 fietsNummerEntry.grid(row=0, column=2, pady=5)
 
-# Stall label
+# Stal label
 fietsNummerLabel = Label(master=fietsStallenFrame,
                         text='Uw fietsnummer:',
                         anchor=W,
