@@ -23,6 +23,7 @@ def close():
 def hoofdmenu():
     global returnButton
     registrationFrame.grid_remove()
+    fietsStallenFrame.grid_remove()
     mainFrame.grid(padx=30, pady=30)
     returnButton.place_forget()
 
