@@ -13,12 +13,14 @@ helpDisplayed = False
 def close():
     root.withdraw()
 
+# Return to main menu
 def hoofdmenu():
     global returnButton
     registrationFrame.grid_remove()
     mainFrame.grid(padx=30, pady=30)
     returnButton.place_forget()
 
+# Create home button
 def homebutton():
     global returnButton
     returnButton = Button(master=root,
@@ -29,12 +31,14 @@ def homebutton():
                           fg='white',
                           command=hoofdmenu)
     returnButton.place(rely=1, relx=0, x=30, y=-30, anchor=SW)
-    
+
+# Open register frame
 def register():
     homebutton()
     mainFrame.grid_remove()
     registrationFrame.grid(padx=30, pady=30)    
 
+# Confirm registration
 def confirmRegistration():
     voornaam = voornaamEntry.get()
     achternaam = achternaamEntry.get()
@@ -44,10 +48,9 @@ def confirmRegistration():
     kleur = kleurEntry.get()
     gegevens = [voornaam, achternaam, geboortedatum, telefoon, email, kleur]
     fietsToevoegen(gegevens)
-##    registrationFrame.grid_remove()
-##    mainFrame.grid(padx=30, pady=30)
     hoofdmenu()
 
+# Display help widgets
 def menuHelp():
     global helpDisplayed
     labels = [registerLabel, stallLabel, collectLabel]
@@ -129,16 +132,6 @@ exitButton = Button(master=root,
                     fg='white',
                     command=close)
 exitButton.place(rely=1, relx=1, x=-30, y=-30, anchor=SE)
-
-# Return button
-##returnButton = Button(master=root,
-##                      text='Hoofdmenu',
-##                      height=3,
-##                      width=30,
-##                      bg='blue',
-##                      fg='white',
-##                      command=hoofdmenu)
-##returnButton.place(rely=1, relx=0, x=30, y=-30, anchor=SW)
 
 # Register Label
 registerLabel = Label(master=mainFrame,
