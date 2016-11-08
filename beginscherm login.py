@@ -50,13 +50,15 @@ def register():
 
 # Confirm registration
 def confirmRegistration():
-    entries = [voornaamEntry, achternaamEntry, geboortedatumEntry,telefoonEntry, emailEntry, kleurEntry,wachtwoordEntry]
+    entries = [voornaamEntry, achternaamEntry, geboortedatumEntry,
+               telefoonEntry, emailEntry, kleurEntry, wachtwoordEntry]
     gegevens = []
     for entry in entries:
         gegevens.append(entry.get())
         entry.delete(0,END)
     gebruikerToevoegen(gegevens)
     hoofdmenu()
+
 def login():
     homebutton()
     mainFrame.grid_remove()
@@ -78,6 +80,7 @@ def fietsStallen():
 def confirmBikeNumber():
     fietsNummer = fietsNummerEntry.get()
     fietsNummerStallen(fietsNummer)
+
 # Display help widgets
 def menuHelp():
     global helpDisplayed
