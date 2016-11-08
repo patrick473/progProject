@@ -99,7 +99,7 @@ registrationFrame.config(bg=gold)
 
 # stalling window widgets frame
 fietsStallenFrame = Frame(root)
-fietsStallenFrame.config(bg='gold')
+fietsStallenFrame.config(bg=gold)
 
 ########## Main window widgets ##########
 
@@ -116,7 +116,7 @@ registrationButton.grid(row=0,column=0, pady=5)
 # stalling button
 stallingButton = Button(master=mainFrame,
                        text='Stal je fiets.',
-                       command=fietsStallen.fietsStallen,
+                       command=fietsStallen,
                        height=3,
                        width=30,
                        bg=blue,
