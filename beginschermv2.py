@@ -57,6 +57,10 @@ def confirmRegistration():
     fietsToevoegen(gegevens)
     hoofdmenu()
 
+def fietsStallen():
+    homebutton()
+    mainFrame.grid_remove()
+    fietsStallenFrame.grid(padx=30,pady=30)
 # Display help widgets
 def menuHelp():
     global helpDisplayed
@@ -90,6 +94,10 @@ mainFrame.grid(padx=30, pady=30)
 registrationFrame = Frame(root)
 registrationFrame.config(bg=gold)
 
+# stalling window widgets frame
+fietsStallenFrame = Frame(root)
+fietsStallenFrame.config(bg='gold')
+
 ########## Main window widgets ##########
 
 # Registration button
@@ -105,6 +113,7 @@ registrationButton.grid(row=0,column=0, pady=5)
 # stalling button
 stallingButton = Button(master=mainFrame,
                        text='Stal je fiets.',
+                       command=fietsStallen,
                        height=3,
                        width=30,
                        bg=blue,
@@ -175,6 +184,21 @@ exitLabel = Label(master=mainFrame,
                   width=30,
                   foreground = black,
                   anchor=W)
+###### Fiets stallen widgets #######
+
+##### stal Entry ######
+fietsNummerEntry = Entry(master=fietsStallenFrame,
+                         width=30)
+fietsNummerEntry.grid(row=0, column=2, pady=5)
+
+####stal Label####
+fietsNummerLabel = Label(master=fietsStallenFrame,
+                        text='Uw fietsnummer:',
+                        anchor=W,
+                        width=20,
+                        bg='gold')
+fietsNummerLabel.grid(row=0, column=1, pady=5)
+
 ########## Registration widgets ##########
 
 # Voornaam label
