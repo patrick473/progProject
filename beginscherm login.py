@@ -57,13 +57,6 @@ def confirmRegistration():
         entry.delete(0,END)
     gebruikerToevoegen(gegevens)
     hoofdmenu()
-    voornaamEntry.delete(0,END)
-    achternaamEntry.delete(0,END)
-    telefoonEntry.delete(0,END)
-    emailEntry.delete(0,END)
-    geboortedatumEntry.delete(0,END)
-    wachtwoordEntry.delete(0,END)
-    kleurEntry.delete(0,END)
 def login():
     homebutton()
     mainFrame.grid_remove()
