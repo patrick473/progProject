@@ -3,10 +3,11 @@ import csv
 def fietsNummerStallen(invoer):
     try:
         with open('Stalling.csv', 'w', newline = '') as myCSVFile:
-            file= csv.reader(myCSVFile, delimiter = ';')
+            file = csv.writer(myCSVFile, delimiter = ';')
             file.writerow(invoer)
     except FileNotFoundError:
         return False
+
 def gebruikerToevoegen(invoer):
     try:
         rows = []
