@@ -52,7 +52,8 @@ def confirmRegistration():
     telefoon = telefoonEntry.get()
     email = emailEntry.get()
     kleur = kleurEntry.get()
-    gegevens = [voornaam, achternaam, geboortedatum, telefoon, email, kleur]
+    wachtwoord = wachtwoordEntry.get()
+    gegevens = [voornaam, achternaam, geboortedatum, telefoon, email, kleur, wachtwoord]
     fietsToevoegen(gegevens)
     hoofdmenu()
 
@@ -224,7 +225,13 @@ kleurLabel = Label(master=registrationFrame,
                    bg=gold)
 kleurLabel.grid(row=5, column=0, pady=5)
 
-
+# Wachtwoord
+passwordLabel = Label(master=registrationFrame,
+                      text='Wachtwoord:',
+                      anchor=W,
+                      width=30,
+                      bg=gold)
+passwordLabel.grid(row=6, column=0, pady=5)
 # Voornaam entry
 voornaamEntry = Entry(master=registrationFrame,
                       width=30)
@@ -254,6 +261,11 @@ emailEntry.grid(row=4, column=1, pady=5)
 kleurEntry = Entry(master=registrationFrame,
                    width=30)
 kleurEntry.grid(row=5, column=1, pady=5)
+
+# Wachtwoord entry
+wachtwoordEntry = Entry(master=registrationFrame,
+                        width=30)
+wachtwoordEntry.grid(row=6, column=1, pady=5)
 
 # Confirm button
 returnButton = Button(master=registrationFrame,
