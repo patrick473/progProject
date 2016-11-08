@@ -95,14 +95,14 @@ registrationButton = Button(master=mainFrame,
                             command=register)
 registrationButton.grid(row=0,column=0, pady=5)
 
-# Storing button
-storingButton = Button(master=mainFrame,
+# stalling button
+stallingButton = Button(master=mainFrame,
                        text='Stal je fiets.',
                        height=3,
                        width=30,
                        bg='blue',
                        fg='white')
-storingButton.grid(row=1,column=0, pady=5)
+stallingButton.grid(row=1,column=0, pady=5)
 
 # Info button
 infoButton = Button(master=mainFrame,
