@@ -48,23 +48,13 @@ def register():
 
 # Confirm registration
 def confirmRegistration():
-    voornaam = voornaamEntry.get()
-    achternaam = achternaamEntry.get()
-    geboortedatum = geboortedatumEntry.get()
-    telefoon = telefoonEntry.get()
-    email = emailEntry.get()
-    kleur = kleurEntry.get()
-    wachtwoord = wachtwoordEntry.get()
-    gegevens = [voornaam, achternaam, geboortedatum, telefoon, email, kleur, wachtwoord]
+    entries = [voornaamEntry, achternaamEntry, geboortedatumEntry,telefoonEntry, emailEntry, kleurEntry,wachtwoordEntry]
+    gegevens = []
+    for entry in entries:
+        gegevens.append(entry.get())
+        entry.delete(0,END)
     gebruikerToevoegen(gegevens)
     hoofdmenu()
-    voornaamEntry.delete(0,END)
-    achternaamEntry.delete(0,END)
-    telefoonEntry.delete(0,END)
-    emailEntry.delete(0,END)
-    geboortedatumEntry.delete(0,END)
-    wachtwoordEntry.delete(0,END)
-    kleurEntry.delete(0,END)
 def login():
     homebutton()
     mainFrame.grid_remove()
