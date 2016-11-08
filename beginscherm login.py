@@ -261,11 +261,6 @@ infoButton = Button(master=loggedInFrame,
 infoButton.grid(row=2,column=0,pady=5)
 
 ########## Fiets stallen widgets ###########
-
-# Stall entry
-fietsNummerEntry = Entry(master=fietsStallenFrame,
-                         width=30)
-fietsNummerEntry.grid(row=0, column=2, pady=5)
 ##### stal button #####
 fietsNummerBevestigingButton = Button(master=fietsStallenFrame,
                                     text='Bevestiggen',
@@ -275,6 +270,11 @@ fietsNummerBevestigingButton = Button(master=fietsStallenFrame,
                                     fg=white,
                                     command=confirmBikeNumber)
 fietsNummerBevestigingButton.grid(row=2,column=2,pady=5)
+# Stall entry
+fietsNummerEntry = Entry(master=fietsStallenFrame,
+                         width=30)
+fietsNummerEntry.grid(row=0, column=2, pady=5)
+
 # Stall label
 fietsNummerLabel = Label(master=fietsStallenFrame,
                         text='Uw fietsnummer:',
