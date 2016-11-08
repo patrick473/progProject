@@ -74,7 +74,7 @@ def confirmLogin():
 
 def fietsStallen():
     homebutton()
-    mainFrame.grid_remove()
+    loggedInFrame.grid_remove()
     fietsStallenFrame.grid(padx=30,pady=30)
 
 # Display help widgets
@@ -143,25 +143,6 @@ loginButton = Button(master=mainFrame,
                        bg=blue,
                        fg=white)
 loginButton.grid(row=1,column=0, pady=5)
-
-'''# stalling button
-stallingButton = Button(master=mainFrame,
-                       text='Stal je fiets.',
-                       command=fietsStallen,
-                       height=3,
-                       width=30,
-                       bg=blue,
-                       fg=white)
-stallingButton.grid(row=4,column=0, pady=5)
-
-# Info button
-infoButton = Button(master=mainFrame,
-                           text='Ophalen van je fiets/\ninformatie opvragen.',
-                           height=3,
-                           width=30,
-                           background=blue,
-                           foreground=white)
-infoButton.grid(row=2,column=0,pady=5)'''
 
 # Help button
 helpButton = Button(master=mainFrame,
@@ -257,6 +238,24 @@ confirmLoginButton = Button(master=loginFrame,
 confirmLoginButton.grid(row=2, column=1, pady=5)
 
 ########## Logged in widgets ##########
+# Stalling button
+stallingButton = Button(master=loggedInFrame,
+                       text='Stal je fiets.',
+                       command=fietsStallen,
+                       height=3,
+                       width=30,
+                       bg=blue,
+                       fg=white)
+stallingButton.grid(row=4,column=0, pady=5)
+
+# Info button
+infoButton = Button(master=loggedInFrame,
+                           text='Ophalen van je fiets/\ninformatie opvragen.',
+                           height=3,
+                           width=30,
+                           background=blue,
+                           foreground=white)
+infoButton.grid(row=2,column=0,pady=5)
 
 ########## Fiets stallen widgets ###########
 
