@@ -27,6 +27,7 @@ def hoofdmenu():
     registrationFrame.grid_remove()
     loginFrame.grid_remove()
     fietsStallenFrame.grid_remove()
+    loggedInFrame.grid_remove()
     mainFrame.grid(padx=30, pady=30)
     returnButton.place_forget()
 
@@ -65,16 +66,22 @@ def login():
     loginFrame.grid(padx=30, pady=30)
 
 def confirmLogin():
-    fietsNummer = fietsNummerLoginEntry.get()
-    password = passwordLoginEntry.get()
-    loggedIn = checkLogin(fietsNummer,password)
+    entries = [fietsNummerLoginEntry, passwordLoginEntry]
+    gegevens = []
+    for entry in entries:
+        gegevens.append(entry.get())
+    loggedIn = checkLogin(gegevens[0],gegevens[1])
     if loggedIn == True:
+        for entry in entries:
+            entry.delete(0,END)
         loginFrame.grid_remove()
         loggedInFrame.grid(padx=30, pady=30)
-        if fietsGestald(fietsNummer) == True:
+        if fietsGestald(gegevens[0]) == True:
             ophaalButton.grid(row=2,column=0, pady=5)
         else:
             stallingButton.grid(row=2,column=0, pady=5)
+    else:
+        wrongLoginLabel.grid(row=0, column=2, pady=5)
 
 def fietsStallen():
     homebutton()
@@ -169,7 +176,8 @@ exitButton.place(rely=1, relx=1, x=-30, y=-30, anchor=SE)
 
 # Register Label
 registerLabel = Label(master=mainFrame,
-                      text='Gebruik deze knop om je fiets te registreren in het systeem',
+                      text='Gebruik deze knop om je fiets te '
+                           'registreren in het systeem',
                       background = gold,
                       height=3,
                       width=80,
@@ -187,7 +195,8 @@ stallLabel = Label(master=mainFrame,
 
 # Collect label
 collectLabel = Label(master=mainFrame,
-                     text='Gebruik deze knop om je fiets op te halen of om informatie op te vragen',
+                     text='Gebruik deze knop om je fiets op te '
+                          'halen of om informatie op te vragen',
                      background = gold,
                      height=3,
                      width=80,
@@ -221,6 +230,11 @@ passwordLabel = Label(master=loginFrame,
                       bg=gold)
 passwordLabel.grid(row=1, column=0, pady=5)
 
+wrongLoginLabel = Label(master=loginFrame,
+                        text='Dit is geen juiste combinatie '
+                             'van fietsnummer en wachtwoord.',
+                        anchor=W,
+                        bg=gold)
 # Fietsnummer entry
 fietsNummerLoginEntry = Entry(master=loginFrame,
                          width=30)
