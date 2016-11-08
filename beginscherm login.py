@@ -101,25 +101,20 @@ root.geometry('{}x{}'.format(root.winfo_screenwidth(),
 ########## Frames ##########
 
 # Main window widgets frame
-mainFrame = Frame(root)
-mainFrame.config(bg=gold)
+mainFrame = Frame(root, bg=gold)
 mainFrame.grid(padx=30, pady=30)
 
 # Registration window widgets frame
-registrationFrame = Frame(root)
-registrationFrame.config(bg=gold)
+registrationFrame = Frame(root, bg=gold)
 
 # Login window widgets frame
-loginFrame = Frame(root)
-loginFrame.config(bg=gold)
+loginFrame = Frame(root, bg=gold)
 
 # Fiets stallen window widgets frame
-fietsStallenFrame = Frame(root)
-fietsStallenFrame.config(bg=gold)
+fietsStallenFrame = Frame(root, bg=gold)
 
 # Logged in Frame
-loggedInFrame = Frame(root)
-fietsStallenFrame.config(bg=gold)
+loggedInFrame = Frame(root, bg=gold)
 
 ########## Main window widgets ##########
 
