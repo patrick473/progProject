@@ -5,6 +5,7 @@ except ImportError:
     from Tkinter import *
 
 from csvwriter import gebruikerToevoegen, checkLogin,fietsNummerStallen
+
 #statements en variabelen
 helpDisplayed = False
 gold='#ffd700'
@@ -13,6 +14,7 @@ white='#FFFFFF'
 grey='#666666'
 red='#FF0000'
 black='#000000'
+
 # Functions
 
 # Close main window
@@ -48,14 +50,11 @@ def register():
 
 # Confirm registration
 def confirmRegistration():
-    voornaam = voornaamEntry.get()
-    achternaam = achternaamEntry.get()
-    geboortedatum = geboortedatumEntry.get()
-    telefoon = telefoonEntry.get()
-    email = emailEntry.get()
-    kleur = kleurEntry.get()
-    wachtwoord = wachtwoordEntry.get()
-    gegevens = [voornaam, achternaam, geboortedatum, telefoon, email, kleur, wachtwoord]
+    entries = [voornaamEntry, achternaamEntry, geboortedatumEntry,telefoonEntry, emailEntry, kleurEntry,wachtwoordEntry]
+    gegevens = []
+    for entry in entries:
+        gegevens.append(entry.get())
+        entry.delete(0,END)
     gebruikerToevoegen(gegevens)
     hoofdmenu()
 
