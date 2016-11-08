@@ -38,6 +38,11 @@ def homebutton():
                           fg=white,
                           command=hoofdmenu)
     returnButton.place(rely=1, relx=0, x=30, y=-30, anchor=SW)
+#opent stallen frame
+def fietsStallen():
+    homebutton()
+    mainFrame.grid_remove()
+    fietsStallenFrame.grid(padx=30,pady=30)
 
 # Open register frame
 def register():
@@ -58,10 +63,7 @@ def confirmRegistration():
     fietsToevoegen(gegevens)
     hoofdmenu()
 
-def fietsStallen():
-    homebutton()
-    mainFrame.grid_remove()
-    fietsStallenFrame.grid(padx=30,pady=30)
+
 # Display help widgets
 def menuHelp():
     global helpDisplayed
@@ -97,7 +99,7 @@ registrationFrame.config(bg=gold)
 
 # stalling window widgets frame
 fietsStallenFrame = Frame(root)
-fietsStallenFrame.config(bg='gold')
+fietsStallenFrame.config(bg=gold)
 
 ########## Main window widgets ##########
 
