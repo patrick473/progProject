@@ -59,7 +59,13 @@ def confirmRegistration():
         entry.delete(0,END)
     gebruikerToevoegen(gegevens)
     hoofdmenu()
-
+    
+#Slaat nummer,datum en naam op voor het stallen
+def confirmBikeNumber():
+    fietsNummer = fietsNummerEntry.get()
+    print(fietsNummer)
+    fietsNummerStallen(fietsNummer)
+    
 def login():
     homebutton()
     mainFrame.grid_remove()

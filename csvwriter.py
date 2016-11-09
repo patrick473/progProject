@@ -15,7 +15,18 @@ def fietsOphalenCSV(fietsnummer):
         for row in rows:
             if row[0] != fietsnummer:
                 writer.writerow(row)
-
+                
+def fietsNummerStallen(invoer):
+    naam = 'LUL'
+    dateTime = time.strftime('%c')
+    Data = [invoer,naam,dateTime]
+    try:
+        with open('Stalling.csv', 'a', newline = '') as myCSVFile:
+            file = csv.writer(myCSVFile, delimiter = ';')
+            file.writerow(Data)
+    except FileNotFoundError:
+        return False
+    
 def fietsStallenCSV(fietsnummer):
     try:
         rows=[]
