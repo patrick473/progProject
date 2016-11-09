@@ -1,4 +1,3 @@
-
 # Import tkinter for Python 3.X or Python 2.X
 try:
     from tkinter import *

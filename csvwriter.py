@@ -43,13 +43,16 @@ def fietsStallenCSV(fietsnummer):
             writer.writerow(row)
 
 def fietsGestald(fietsnummer):
-    with open('Stalling.csv', 'r', newline='') as myCSVFile:
-        reader = csv.reader(myCSVFile, delimiter=';')
-        for row in reader:
-            if row[0] == fietsnummer:
-                return True
-            else:
-                return False
+    try:
+        with open('Stalling.csv', 'r', newline='') as myCSVFile:
+            reader = csv.reader(myCSVFile, delimiter=';')
+            for row in reader:
+                if row[0] == fietsnummer:
+                    return True
+                else:
+                    return False
+    except FileNotFoundError:
+        return False
 
 def gebruikerToevoegen(invoer):
     try:
@@ -76,11 +79,10 @@ def checkLogin(fietsNummer, password):
             reader = csv.reader(myCSVFile, delimiter = ';')
             for row in reader:
                 rows.append(row)
-    except FileNotFoundError:
+    except FileNotFoundError:)
         return False
     for row in rows:
         if row[6] == password and row[7] == fietsNummer:
             return True
-        else:
-            return False
+    return False
 
