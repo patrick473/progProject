@@ -5,6 +5,7 @@ except ImportError:
     from Tkinter import *
 
 from csvwriter import *
+from sys import exit
 
 #statements en variabelen
 helpDisplayed = False
@@ -20,6 +21,7 @@ black='#000000'
 # Close main window
 def close():
     root.withdraw()
+    exit()
 
 # Return to main menu
 def hoofdmenu():
