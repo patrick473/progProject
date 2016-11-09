@@ -2,14 +2,7 @@ import csv
 import time
 
 def fietsOphalenCSV(fietsnummer):
-    try:
-        rows=[]
-        with open('Stalling.csv', 'r', newline = '') as myCSVFile:
-            file = csv.reader(myCSVFile, delimiter = ';')
-            for row in file:
-                rows.append(row)
-    except FileNotFoundError:
-        pass
+    rows = csvLezen('Stalling.csv')
     with open('Stalling.csv', 'w', newline='') as myCSVFile:
         writer = csv.writer(myCSVFile, delimiter=';')
         for row in rows:
@@ -17,26 +10,15 @@ def fietsOphalenCSV(fietsnummer):
                 writer.writerow(row)
                 
 def fietsNummerStallen(invoer):
-    naam = 'LUL'
+    fietsnummer = invoer[-1]
+    naam = invoer[0], invoer[1]
     dateTime = time.strftime('%c')
-    Data = [invoer,naam,dateTime]
     try:
         with open('Stalling.csv', 'a', newline = '') as myCSVFile:
             file = csv.writer(myCSVFile, delimiter = ';')
-            file.writerow(Data)
+            file.writerow([fietsnummer, naam, dateTime])
     except FileNotFoundError:
         return False
-    
-def fietsStallenCSV(gegevens):
-    fietsnummer = gegevens[-1]
-    naam = gegevens[0], gegevens[1]
-    tijd = time.strftime('%d/%m/%Y at %H:%M:%S')
-    try:
-        with open('Stalling.csv', 'a', newline = '') as myCSVFile:
-            writer = csv.writer(myCSVFile, delimiter = ';')
-            writer.writerow([fietsnummer, naam, tijd])
-    except FileNotFoundError:
-        pass
 
 def fietsGestald(fietsnummer):
     try:
@@ -49,10 +31,10 @@ def fietsGestald(fietsnummer):
     except FileNotFoundError:
         return False
 
-def gebruikersLezen():
+def csvLezen(csvfile):
     try:
         rows = []
-        with open('fietsen.csv', 'r', newline = '') as myCSVFile:
+        with open(csvfile, 'r', newline = '') as myCSVFile:
             reader = csv.reader(myCSVFile, delimiter = ';')
             for row in reader:
                 rows.append(row)
@@ -61,14 +43,7 @@ def gebruikersLezen():
     return rows
 
 def gebruikerToevoegen(invoer):
-    try:
-        rows = []
-        with open('fietsen.csv', 'r', newline = '') as myCSVFile:
-            reader = csv.reader(myCSVFile, delimiter = ';')
-            for row in reader:
-                rows.append(row)
-    except FileNotFoundError:
-        pass
+    rows = csvLezen('fietsen.csv')
     nummer = len(rows) + 1
     gegevens = invoer
     gegevens.append(nummer)
@@ -79,13 +54,8 @@ def gebruikerToevoegen(invoer):
             writer.writerow(row)
 
 def checkLogin(fietsnummer, password):
-    try:
-        rows = []
-        with open('fietsen.csv', 'r', newline = '') as myCSVFile:
-            reader = csv.reader(myCSVFile, delimiter = ';')
-            for row in reader:
-                rows.append(row)
-    except FileNotFoundError:
+    rows = csvLezen('fietsen.csv')
+    if rows == []:
         return False
     for row in rows:
         if row[6] == password and row[7] == fietsnummer:
@@ -93,7 +63,7 @@ def checkLogin(fietsnummer, password):
     return False
 
 def jouwGegevensOphalen(fietsnummer):
-    rows = gebruikersLezen()
+    rows = csvLezen('fietsen.csv')
     for row in rows:
         if row[7] == fietsnummer:
             return row

@@ -28,7 +28,6 @@ def hoofdmenu():
     global returnButton
     registrationFrame.grid_remove()
     loginFrame.grid_remove()
-    fietsStallenFrame.grid_remove()
     jouwGegevensFrame.grid_remove()
     loggedInFrame.grid_remove()
     mainFrame.grid(padx=30, pady=30)
@@ -86,11 +85,8 @@ def confirmLogin():
 
 def fietsStallen():
     fietsnummer = fietsNummerLoginEntry.get()
-    print(jouwGegevensOphalen(fietsnummer))
-    fietsStallenCSV(jouwGegevensOphalen(fietsnummer))
+    fietsNummerStallen(jouwGegevensOphalen(fietsnummer))
     homebutton()
-    loggedInFrame.grid_remove()
-    fietsStallenFrame.grid(padx=30,pady=30)
 
 def jouwGegevens():
     loggedInFrame.grid_remove()
@@ -216,11 +212,6 @@ def jouwGegevens():
                               bg=gold)
     jouwPasswordLabel.grid(row=6, column=1, pady=5)
 
-#Slaat nummer,datum en naam op voor het stallen
-def confirmBikeNumber():
-    fietsNummer = fietsNummerLoginEntry.get()
-    fietsNummerStallen(fietsNummer)
-
 # Haalt fietsen uit het csv bestand
 def fietsOphalen():
     fietsOphalenCSV(fietsNummerLoginEntry.get())
@@ -258,9 +249,6 @@ registrationFrame = Frame(root, bg=gold)
 
 # Login window widgets frame
 loginFrame = Frame(root, bg=gold)
-
-# Fiets stallen window widgets frame
-fietsStallenFrame = Frame(root, bg=gold)
 
 # Logged in Frame
 loggedInFrame = Frame(root, bg=gold)
@@ -417,29 +405,6 @@ infoButton = Button(master=loggedInFrame,
                     foreground=white,
                     command=jouwGegevens)
 infoButton.grid(row=1,column=0,pady=5)
-
-########## Fiets stallen widgets ###########
-##### stal button #####
-fietsNummerBevestigingButton = Button(master=fietsStallenFrame,
-                                    text='Bevestigen',
-                                    height=3,
-                                    width=30,
-                                    bg=blue,
-                                    fg=white,
-                                    command=confirmBikeNumber)
-fietsNummerBevestigingButton.grid(row=2,column=2,pady=5)
-# Stal entry
-fietsNummerEntry = Entry(master=fietsStallenFrame,
-                         width=30)
-fietsNummerEntry.grid(row=0, column=2, pady=5)
-
-# Stal label
-fietsNummerLabel = Label(master=fietsStallenFrame,
-                        text='Uw fietsnummer:',
-                        anchor=W,
-                        width=20,
-                        bg=gold)
-fietsNummerLabel.grid(row=0, column=1, pady=5)
 
 ########## Registration widgets ##########
 

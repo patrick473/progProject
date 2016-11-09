@@ -17,10 +17,10 @@ def fietsOphalenCSV(fietsnummer):
                 writer.writerow(row)
 
 def fietsNummerStallen(invoer):
+    naam = 'LUL'
+    dateTime = time.strftime('%c')
+    Data = [invoer,naam,dateTime]
     try:
-        naam = 'LUL'
-        dateTime = time.strftime('%c')
-        Data = [invoer,naam,dateTime]
         with open('Stalling.csv', 'a', newline = '') as myCSVFile:
             file = csv.writer(myCSVFile, delimiter = ';')
             file.writerow(Data)
