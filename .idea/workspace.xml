@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5c6e79d-44ec-4de8-b109-9f3e9a2027c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/progProject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beginscherm login.py" afterPath="$PROJECT_DIR$/beginscherm login.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/csvwriter.py" afterPath="$PROJECT_DIR$/csvwriter.py" />
     </list>
     <ignored path="untitled1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="csvwriter.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="csvwriter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csvwriter.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
@@ -41,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="beginscherm login.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="beginscherm login.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/beginscherm login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+            <state relative-caret-position="481">
+              <caret line="414" column="15" selection-start-line="414" selection-start-column="15" selection-end-line="414" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -93,8 +87,8 @@
         <option value="$PROJECT_DIR$/Beginscherm met login" />
         <option value="$PROJECT_DIR$/fietsen.csv" />
         <option value="$PROJECT_DIR$/Stalling.csv" />
-        <option value="$PROJECT_DIR$/beginscherm login.py" />
         <option value="$PROJECT_DIR$/csvwriter.py" />
+        <option value="$PROJECT_DIR$/beginscherm login.py" />
       </list>
     </option>
   </component>
@@ -446,7 +440,8 @@
     <MESSAGE value="beginscherm verder stukje gemaakt&#10;" />
     <MESSAGE value="csvwriter aangepast" />
     <MESSAGE value="loggedIn screen aangepast" />
-    <option name="LAST_COMMIT_MESSAGE" value="loggedIn screen aangepast" />
+    <MESSAGE value="login gefixt" />
+    <option name="LAST_COMMIT_MESSAGE" value="login gefixt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -678,14 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beginscherm login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csvwriter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -693,6 +680,14 @@
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beginscherm login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="414" column="15" selection-start-line="414" selection-start-column="15" selection-end-line="414" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
