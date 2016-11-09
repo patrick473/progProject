@@ -53,6 +53,17 @@ def fietsGestald(fietsnummer):
     except FileNotFoundError:
         return False
 
+def gebruikersLezen():
+    try:
+        rows = []
+        with open('fietsen.csv', 'r', newline = '') as myCSVFile:
+            reader = csv.reader(myCSVFile, delimiter = ';')
+            for row in reader:
+                rows.append(row)
+    except FileNotFoundError:
+        pass
+    return rows
+
 def gebruikerToevoegen(invoer):
     try:
         rows = []
@@ -71,7 +82,7 @@ def gebruikerToevoegen(invoer):
         for row in rows:
             writer.writerow(row)
 
-def checkLogin(fietsNummer, password):
+def checkLogin(fietsnummer, password):
     try:
         rows = []
         with open('fietsen.csv', 'r', newline = '') as myCSVFile:
@@ -81,7 +92,12 @@ def checkLogin(fietsNummer, password):
     except FileNotFoundError:
         return False
     for row in rows:
-        if row[6] == password and row[7] == fietsNummer:
+        if row[6] == password and row[7] == fietsnummer:
             return True
     return False
 
+def jouwGegevensOphalen(fietsnummer):
+    rows = gebruikersLezen()
+    for row in rows:
+        if row[7] == fietsnummer:
+            return row

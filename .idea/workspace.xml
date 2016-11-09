@@ -4,6 +4,7 @@
     <list default="true" id="d5c6e79d-44ec-4de8-b109-9f3e9a2027c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beginscherm login.py" afterPath="$PROJECT_DIR$/beginscherm login.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/csvwriter.py" afterPath="$PROJECT_DIR$/csvwriter.py" />
     </list>
     <ignored path="untitled1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,8 +27,8 @@
       <file leaf-file-name="csvwriter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csvwriter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+            <state relative-caret-position="570">
+              <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -38,8 +39,8 @@
       <file leaf-file-name="beginscherm login.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/beginscherm login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+            <state relative-caret-position="541">
+              <caret line="217" column="24" selection-start-line="217" selection-start-column="24" selection-end-line="217" selection-end-column="24" />
               <folding>
                 <element signature="e#124#147#0" expanded="true" />
               </folding>
@@ -685,8 +686,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/csvwriter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        <state relative-caret-position="570">
+          <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -695,8 +696,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/beginscherm login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        <state relative-caret-position="541">
+          <caret line="217" column="24" selection-start-line="217" selection-start-column="24" selection-end-line="217" selection-end-column="24" />
           <folding>
             <element signature="e#124#147#0" expanded="true" />
           </folding>

@@ -93,6 +93,126 @@ def fietsStallen():
 def jouwGegevens():
     loggedInFrame.grid_remove()
     jouwGegevensFrame.grid(padx=30, pady=30)
+        ########## Jouw gegevens widgets ##########
+
+    # Voornaam label
+    voornaamLabel = Label(master=jouwGegevensFrame,
+                          text='Voornaam:',
+                          anchor=W,
+                          width=30,
+                          bg=gold)
+    voornaamLabel.grid(row=0, column=0, pady=5)
+
+    # Achternaam Label
+    achternaamLabel = Label(master=jouwGegevensFrame,
+                            text='Achternaam:',
+                            anchor=W,
+                            width=30,
+                            bg=gold)
+    achternaamLabel.grid(row=1, column=0, pady=5)
+
+    # Geboortedatum label
+    geboortedatumLabel = Label(master=jouwGegevensFrame,
+                               text='Geboortedatum (DD/MM/YYYY):',
+                               anchor=W,
+                               width=30,
+                               bg=gold)
+    geboortedatumLabel.grid(row=2, column=0, pady=5)
+
+    # Telefoonnummer label
+    telefoonLabel = Label(master=jouwGegevensFrame,
+                          text='Telefoonnummer:',
+                          anchor=W,
+                          width=30,
+                          bg=gold)
+    telefoonLabel.grid(row=3, column=0, pady=5)
+
+    # E-mailadres label
+    emailLabel = Label(master=jouwGegevensFrame,
+                       text='E-mailadres:',
+                       anchor=W,
+                       width=30,
+                       bg=gold)
+    emailLabel.grid(row=4, column=0, pady=5)
+
+    # Kleur van fiets label
+    kleurLabel = Label(master=jouwGegevensFrame,
+                       text='Kleur van je fiets:',
+                       anchor=W,
+                       width=30,
+                       bg=gold)
+    kleurLabel.grid(row=5, column=0, pady=5)
+
+    # Wachtwoord
+    passwordLabel = Label(master=jouwGegevensFrame,
+                          text='Wachtwoord:',
+                          anchor=W,
+                          width=30,
+                          bg=gold)
+    passwordLabel.grid(row=6, column=0, pady=5)
+
+    # Jouw voornaam label
+    jouwVoornaamLabel = Label(master=jouwGegevensFrame,
+                              text=
+                              jouwGegevensOphalen(fietsNummerLoginEntry.get())[0],
+                              anchor=W,
+                              width=30,
+                              bg=gold)
+    jouwVoornaamLabel.grid(row=0, column=1, pady=5)
+
+    # Jouw achternaam Label
+    jouwAchternaamLabel = Label(master=jouwGegevensFrame,
+                                text=
+                              jouwGegevensOphalen(fietsNummerLoginEntry.get())[1],
+                                anchor=W,
+                                width=30,
+                                bg=gold)
+    jouwAchternaamLabel.grid(row=1, column=1, pady=5)
+
+    # Jouw geboortedatum label
+    jouwGeboortedatumLabel = Label(master=jouwGegevensFrame,
+                                   text=
+                              jouwGegevensOphalen(fietsNummerLoginEntry.get())[2],
+                                   anchor=W,
+                                   width=30,
+                                   bg=gold)
+    jouwGeboortedatumLabel.grid(row=2, column=1, pady=5)
+
+    # Jouw telefoonnummer label
+    jouwTelefoonLabel = Label(master=jouwGegevensFrame,
+                              text=
+                              jouwGegevensOphalen(fietsNummerLoginEntry.get())[3],
+                              anchor=W,
+                              width=30,
+                              bg=gold)
+    jouwTelefoonLabel.grid(row=3, column=1, pady=5)
+
+    # Jouw e-mailadres label
+    jouwEmailLabel = Label(master=jouwGegevensFrame,
+                           text=
+                              jouwGegevensOphalen(fietsNummerLoginEntry.get())[4],
+                           anchor=W,
+                           width=30,
+                           bg=gold)
+    jouwEmailLabel.grid(row=4, column=1, pady=5)
+
+    # Jouw kleur van fiets label
+    jouwKleurLabel = Label(master=jouwGegevensFrame,
+                           text=
+                              jouwGegevensOphalen(fietsNummerLoginEntry.get())[5],
+                           anchor=W,
+                           width=30,
+                           bg=gold)
+    jouwKleurLabel.grid(row=5, column=1, pady=5)
+
+    # Jouw wachtwoord label
+    jouwPasswordLabel = Label(master=jouwGegevensFrame,
+                              text=
+                              jouwGegevensOphalen(fietsNummerLoginEntry.get())[6],
+                              anchor=W,
+                              width=30,
+                              bg=gold)
+    jouwPasswordLabel.grid(row=6, column=1, pady=5)
 
 #Slaat nummer,datum en naam op voor het stallen
 def confirmBikeNumber():
@@ -376,6 +496,7 @@ passwordLabel = Label(master=registrationFrame,
                       width=30,
                       bg=gold)
 passwordLabel.grid(row=6, column=0, pady=5)
+
 # Voornaam entry
 voornaamEntry = Entry(master=registrationFrame,
                       width=30)
