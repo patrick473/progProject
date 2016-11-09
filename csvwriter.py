@@ -27,20 +27,16 @@ def fietsNummerStallen(invoer):
     except FileNotFoundError:
         return False
     
-def fietsStallenCSV(fietsnummer):
+def fietsStallenCSV(gegevens):
+    fietsnummer = gegevens[-1]
+    naam = gegevens[0], gegevens[1]
+    tijd = time.strftime('%d/%m/%Y at %H:%M:%S')
     try:
-        rows=[]
-        with open('Stalling.csv', 'r', newline = '') as myCSVFile:
-            file = csv.reader(myCSVFile, delimiter = ';')
-            for row in file:
-                rows.append(row)
+        with open('Stalling.csv', 'a', newline = '') as myCSVFile:
+            writer = csv.writer(myCSVFile, delimiter = ';')
+            writer.writerow([fietsnummer, naam, tijd])
     except FileNotFoundError:
         pass
-    rows.append([fietsnummer, time.strftime('%d/%m/%Y at %H:%M:%S')])
-    with open('Stalling.csv', 'w', newline='') as myCSVFile:
-        writer = csv.writer(myCSVFile, delimiter=';')
-        for row in rows:
-            writer.writerow(row)
 
 def fietsGestald(fietsnummer):
     try:

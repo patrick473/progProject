@@ -85,7 +85,9 @@ def confirmLogin():
         wrongLoginLabel.grid(row=0, column=2, pady=5)
 
 def fietsStallen():
-    fietsStallenCSV(fietsNummerLoginEntry.get())
+    fietsnummer = fietsNummerLoginEntry.get()
+    print(jouwGegevensOphalen(fietsnummer))
+    fietsStallenCSV(jouwGegevensOphalen(fietsnummer))
     homebutton()
     loggedInFrame.grid_remove()
     fietsStallenFrame.grid(padx=30,pady=30)
