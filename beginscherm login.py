@@ -27,6 +27,7 @@ def hoofdmenu():
     registrationFrame.grid_remove()
     loginFrame.grid_remove()
     fietsStallenFrame.grid_remove()
+    jouwGegevensFrame.grid_remove()
     loggedInFrame.grid_remove()
     mainFrame.grid(padx=30, pady=30)
     returnButton.place_forget()
@@ -59,8 +60,6 @@ def confirmRegistration():
         entry.delete(0,END)
     gebruikerToevoegen(gegevens)
     hoofdmenu()
-    
-#Slaat nummer,datum en naam op voor het stallen
 
 def login():
     homebutton()
@@ -89,10 +88,16 @@ def fietsStallen():
     loggedInFrame.grid_remove()
     fietsStallenFrame.grid(padx=30,pady=30)
 
+def jouwGegevens():
+    loggedInFrame.grid_remove()
+    jouwGegevensFrame.grid(padx=30, pady=30)
+
+#Slaat nummer,datum en naam op voor het stallen
 def confirmBikeNumber():
     fietsNummer = fietsNummerLoginEntry.get()
     fietsNummerStallen(fietsNummer)
 
+# Haalt fietsen uit het csv bestand
 def fietsOphalen():
     fietsOphalenCSV(fietsNummerLoginEntry.get())
 
@@ -136,6 +141,8 @@ fietsStallenFrame = Frame(root, bg=gold)
 # Logged in Frame
 loggedInFrame = Frame(root, bg=gold)
 
+# Jouw gegevens Frame
+jouwGegevensFrame = Frame(root, bg=gold)
 ########## Main window widgets ##########
 
 # Registration button
@@ -279,11 +286,12 @@ ophaalButton = Button(master=loggedInFrame,
 
 # Info button
 infoButton = Button(master=loggedInFrame,
-                           text='Jouw gegevens',
-                           height=3,
-                           width=30,
-                           background=blue,
-                           foreground=white)
+                    text='Jouw gegevens',
+                    height=3,
+                    width=30,
+                    background=blue,
+                    foreground=white,
+                    command=jouwGegevens)
 infoButton.grid(row=1,column=0,pady=5)
 
 ########## Fiets stallen widgets ###########

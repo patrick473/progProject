@@ -49,8 +49,7 @@ def fietsGestald(fietsnummer):
             for row in reader:
                 if row[0] == fietsnummer:
                     return True
-                else:
-                    return False
+            return False
     except FileNotFoundError:
         return False
 
@@ -79,7 +78,7 @@ def checkLogin(fietsNummer, password):
             reader = csv.reader(myCSVFile, delimiter = ';')
             for row in reader:
                 rows.append(row)
-    except FileNotFoundError:)
+    except FileNotFoundError:
         return False
     for row in rows:
         if row[6] == password and row[7] == fietsNummer:
