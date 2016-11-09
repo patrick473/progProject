@@ -84,17 +84,3 @@ def checkLogin(fietsNummer, password):
         else:
             return False
 
-def checkLogin(fietsNummer, password):
-    try:
-        rows = []
-        with open('fietsen.csv', 'r', newline = '') as myCSVFile:
-            reader = csv.reader(myCSVFile, delimiter = ';')
-            for row in reader:
-                rows.append(row)
-    except FileNotFoundError:
-        return False
-    for row in rows:
-        if row[6] == password and row[7] == fietsNummer:
-            return True
-        else:
-            return False
