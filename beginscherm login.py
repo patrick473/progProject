@@ -385,7 +385,8 @@ fietsNummerLoginEntry.grid(row=0, column=1, pady=5)
 
 # Password entry
 passwordLoginEntry = Entry(master=loginFrame,
-                      width=30)
+                           show='*',
+                           width=30)
 passwordLoginEntry.grid(row=1, column=1, pady=5)
 
 confirmLoginButton = Button(master=loginFrame,
@@ -516,6 +517,7 @@ kleurEntry.grid(row=5, column=1, pady=5)
 
 # Wachtwoord entry
 wachtwoordEntry = Entry(master=registrationFrame,
+                        show='*',
                         width=30)
 wachtwoordEntry.grid(row=6, column=1, pady=5)
 
