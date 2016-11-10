@@ -8,7 +8,6 @@ from csvwriter import *
 from sys import exit
 
 #statements en variabelen
-helpDisplayed = False
 gold='#ffd700'
 blue='#0000FF'
 white='#FFFFFF'
@@ -287,21 +286,6 @@ def jouwGegevens():
 def fietsOphalen():
     fietsOphalenCSV(fietsNummerLoginEntry.get())
 
-# Display help widgets
-def menuHelp():
-    global helpDisplayed
-    labels = [registerLabel, stallLabel, collectLabel]
-    if helpDisplayed == False:
-        registerLabel.grid(row=0, column=1, padx=30)
-        stallLabel.grid(row=1, column=1, padx=30)
-        collectLabel.grid(row=2, column=1, padx=30)
-        helpDisplayed = True
-    else:
-        registerLabel.grid_remove()
-        stallLabel.grid_remove()
-        collectLabel.grid_remove()
-        helpDisplayed = False
-
 # Main window
 root = Tk()
 root.config(bg=gold)
@@ -350,16 +334,6 @@ loginButton = Button(master=mainFrame,
                        bg=blue,
                        fg=white)
 loginButton.grid(row=1,column=0, pady=5)
-
-# Help button
-helpButton = Button(master=mainFrame,
-                    text='?',
-                    height=3,
-                    width=30,
-                    bg=blue,
-                    fg=white,
-                    command=menuHelp)
-helpButton.grid(row=2,column=0,pady=5)
 
 # Exit button
 exitButton = Button(master=root,
