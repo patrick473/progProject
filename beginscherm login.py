@@ -531,18 +531,20 @@ confirmButton.grid(row=99,column=1,pady=5)
 
 # confirm label stallen
 stalConfirmLabel = Label(master=stalFrame,
-                   text='Je fiets wordt nu gestald \n sluit het programma af.',
+                   text='Je fiets wordt nu gestald, \nsluit het programma af.',
                    anchor=W,
                    width=30,
-                   bg=gold)
+                   bg=gold,
+                   justify=LEFT)
 stalConfirmLabel.grid(row=5, column=0, pady=30,padx=30)
 
 # confirm label ophalen
 ophaalConfirmLabel = Label(master=ophaalFrame,
-                   text='Je fiets wordt nu opgehaald \n sluit het programma af.',
+                   text='Je fiets wordt nu opgehaald, \nsluit het programma af.',
                    anchor=W,
                    width=30,
-                   bg=gold)
+                   bg=gold,
+                   justify=LEFT)
 ophaalConfirmLabel.grid(row=5, column=0, pady=30,padx=30)
 
 # Main loop
