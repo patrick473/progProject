@@ -11,8 +11,8 @@ def fietsOphalenCSV(fietsnummer):
                 
 def fietsNummerStallen(invoer):
     fietsnummer = invoer[-1]
-    naam = invoer[0], invoer[1]
-    dateTime = time.strftime('%c')
+    naam = invoer[0] + ' ' + invoer[1]
+    dateTime = time.strftime('%d/%m/%Y at %H:%M:%S')
     try:
         with open('Stalling.csv', 'a', newline = '') as myCSVFile:
             file = csv.writer(myCSVFile, delimiter = ';')

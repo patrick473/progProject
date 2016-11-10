@@ -53,6 +53,19 @@ def register():
 
 # Confirm registration
 def confirmRegistration():
+    entries = [voornaamEntry, achternaamEntry, geboortedatumEntry,
+               telefoonEntry, emailEntry, kleurEntry, wachtwoordEntry]
+    gegevens = []
+    for entry in entries:
+        gegevens.append(entry.get())
+        if len(gegevens[entries.index(entry)]) == 0:
+            emptyField = True
+        entry.delete(0,END)
+    gebruikerToevoegen(gegevens)
+    hoofdmenu()
+
+# Confirm registration
+def checkRegistration():
     global acceptRegistrationButton
     global denyRegistrationButton
     global confirmLabel
@@ -66,12 +79,7 @@ def confirmRegistration():
         gegevens.append(entry.get())
         if len(gegevens[entries.index(entry)]) == 0:
             emptyField = True
-        entry.delete(0,END)
-        
     if emptyField == False:
-        gebruikerToevoegen(gegevens)
-        
-        print(gegevens)
         registrationFrame.grid_remove()
         confirmRegistrationFrame.grid(padx=30, pady=30)
         
@@ -88,21 +96,21 @@ Wachtwoord :         {}
 
 Je fietsnummer is :  {}
 
-'''.format(gegevens[0],gegevens[1],gegevens[2],gegevens[3],gegevens[4],gegevens[5],gegevens[6],gegevens[7]),
+'''.format(gegevens[0],gegevens[1],gegevens[2],gegevens[3],gegevens[4],gegevens[5],gegevens[6],len(csvLezen('fietsen.csv'))+1),
                       background = gold,
                       height=12,
                       width=150,
                       foreground = black,
                       anchor=W)
-        confirmLabel.pack(anchor=W)
+        confirmLabel.grid(row=0, column=0, pady=5)
         acceptRegistrationButton = Button(master=confirmRegistrationFrame,
                       text='Deze gegegevens kloppen.',
                       height=3,
                       width=30,
                       bg=blue,
                       fg=white,
-                      command=hoofdmenu)
-        acceptRegistrationButton.pack(anchor=W,pady=10)
+                      command=confirmRegistration)
+        acceptRegistrationButton.grid(row=1, column=0, pady=5)
         
         denyRegistrationButton = Button(confirmRegistrationFrame,
                       text='Deze gegevens Kloppen niet.',
@@ -111,7 +119,7 @@ Je fietsnummer is :  {}
                       bg=blue,
                       fg=white,
                       command=registrationDeny)
-        denyRegistrationButton.pack(anchor=W,pady=10)
+        denyRegistrationButton.grid(row=2, column=0, pady=5)
 
     else:
         confirmButton['text'] = 'Vul alle gegevens in'
@@ -566,14 +574,14 @@ wachtwoordEntry = Entry(master=registrationFrame,
 wachtwoordEntry.grid(row=6, column=1, pady=5)
 
 # Confirm button
-returnButton = Button(master=registrationFrame,
+confirmButton = Button(master=registrationFrame,
                       text='Bevestigen',
                       height=3,
                       width=30,
                       background=blue,
                       foreground=white,
-                      command=confirmRegistration)
-returnButton.grid(row=99,column=1,pady=5)
+                      command=checkRegistration)
+confirmButton.grid(row=99,column=1,pady=5)
 
 # Main loop
 root.mainloop()
