@@ -158,7 +158,9 @@ def confirmLogin():
 def fietsStallen():
     fietsnummer = fietsNummerLoginEntry.get()
     fietsNummerStallen(jouwGegevensOphalen(fietsnummer))
-    hoofdmenu()
+    loggedInFrame.grid_remove()
+    stalFrame.grid()
+    returnButton.place_forget()
 
 def jouwGegevens():
     loggedInFrame.grid_remove()
@@ -287,7 +289,9 @@ def jouwGegevens():
 # Haalt fietsen uit het csv bestand
 def fietsOphalen():
     fietsOphalenCSV(fietsNummerLoginEntry.get())
-    hoofdmenu()
+    loggedInFrame.grid_remove()
+    ophaalFrame.grid()
+    returnButton.place_forget()
 
 # Main window
 root = Tk()
@@ -304,7 +308,10 @@ mainFrame.grid(padx=30, pady=30)
 
 # Registration window widgets frame
 registrationFrame = Frame(root, bg=gold)
-
+#stal frame window widgets frame
+stalFrame = Frame(root,bg=gold)
+#ophaal frame window widgets frame
+ophaalFrame = Frame(root, bg=gold)
 #confirm registration window widgets frame
 confirmRegistrationFrame = Frame(root, bg=gold)
 
@@ -521,6 +528,22 @@ confirmButton = Button(master=registrationFrame,
                       foreground=white,
                       command=checkRegistration)
 confirmButton.grid(row=99,column=1,pady=5)
+
+# confirm label stallen
+stalConfirmLabel = Label(master=stalFrame,
+                   text='Je fiets wordt nu gestald \n sluit het programma af.',
+                   anchor=W,
+                   width=30,
+                   bg=gold)
+stalConfirmLabel.grid(row=5, column=0, pady=30,padx=30)
+
+# confirm label ophalen
+ophaalConfirmLabel = Label(master=ophaalFrame,
+                   text='Je fiets wordt nu opgehaald \n sluit het programma af.',
+                   anchor=W,
+                   width=30,
+                   bg=gold)
+ophaalConfirmLabel.grid(row=5, column=0, pady=30,padx=30)
 
 # Main loop
 root.mainloop()
