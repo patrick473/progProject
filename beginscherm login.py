@@ -345,44 +345,6 @@ exitButton = Button(master=root,
                     command=close)
 exitButton.place(rely=1, relx=1, x=-30, y=-30, anchor=SE)
 
-# Register Label
-registerLabel = Label(master=mainFrame,
-                      text='Gebruik deze knop om je fiets te '
-                           'registreren in het systeem',
-                      background = gold,
-                      height=3,
-                      width=80,
-                      foreground = black,
-                      anchor=W)
-
-# Stall label
-stallLabel = Label(master=mainFrame,
-                   text='Gebruik deze knop om je fiets te stallen',
-                   background = gold,
-                   height=3,
-                   width=80,
-                   foreground = black,
-                   anchor=W)
-
-# Collect label
-collectLabel = Label(master=mainFrame,
-                     text='Gebruik deze knop om je fiets op te '
-                          'halen of om informatie op te vragen',
-                     background = gold,
-                     height=3,
-                     width=80,
-                     foreground = black,
-                     anchor=W)
-
-# Exit label
-exitLabel = Label(master=mainFrame,
-                  text='Gebruik deze knop om af te sluiten',
-                  background = gold,
-                  height=3,
-                  width=30,
-                  foreground = black,
-                  anchor=W)
-
 ########## Login widgets ##########
 
 # Fietsnummer label
