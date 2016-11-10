@@ -148,8 +148,10 @@ def confirmLogin():
         loginFrame.grid_remove()
         loggedInFrame.grid(padx=30, pady=30)
         if fietsGestald(gegevens[0]) == True:
+            stallingButton.grid_remove()
             ophaalButton.grid(row=2,column=0, pady=5)
         else:
+            ophaalButton.grid_remove()
             stallingButton.grid(row=2,column=0, pady=5)
     else:
         wrongLoginLabel.grid(row=0, column=2, pady=5)
@@ -157,7 +159,7 @@ def confirmLogin():
 def fietsStallen():
     fietsnummer = fietsNummerLoginEntry.get()
     fietsNummerStallen(jouwGegevensOphalen(fietsnummer))
-    homebutton()
+    hoofdmenu()
 
 def jouwGegevens():
     loggedInFrame.grid_remove()
@@ -286,6 +288,7 @@ def jouwGegevens():
 # Haalt fietsen uit het csv bestand
 def fietsOphalen():
     fietsOphalenCSV(fietsNummerLoginEntry.get())
+    hoofdmenu()
 
 # Main window
 root = Tk()
