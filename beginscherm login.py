@@ -25,6 +25,7 @@ def close():
 # Return to main menu
 def hoofdmenu():
     global returnButton
+    registrationFrame.grid_remove()
     confirmRegistrationFrame.grid_remove()
     loginFrame.grid_remove()
     jouwGegevensFrame.grid_remove()
