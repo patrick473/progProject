@@ -83,26 +83,28 @@ def checkRegistration():
         registrationFrame.grid_remove()
         confirmRegistrationFrame.grid(padx=30, pady=30)
         
-        confirmLabel = Label(master=confirmRegistrationFrame,
-                      text='''
-Kloppen deze Gegevens?
-
-Naam :               {} {}
-Geboortedatum :      {}
-Telefoonnummer :     {}
-Emailadres :{}
-Kleur van je fiets : {}
-Wachtwoord :         {}
-
-Je fietsnummer is :  {}
-
-'''.format(gegevens[0],gegevens[1],gegevens[2],gegevens[3],gegevens[4],gegevens[5],gegevens[6],len(csvLezen('fietsen.csv'))+1),
-                      background = gold,
-                      height=12,
-                      width=150,
-                      foreground = black,
-                      anchor=W)
-        confirmLabel.grid(row=0, column=0, pady=5)
+        confirmLabelText = Label(master=confirmRegistrationFrame,
+                             text=('Kloppen deze Gegevens?\nNaam:\n'+
+                             'Geboortedatum:\nTelefoonnummer:\nEmailadres:\n'+
+                             'Kleur van je fiets:\nWachtwoord:\n\n'+
+                             'Je fietsnummer is:'),
+                             background = gold,
+                             width=30,
+                             foreground = black,
+                             anchor=W,
+                             justify=LEFT)
+        confirmLabelText.grid(row=0, column=0, pady=5)
+        confirmLabelVariables = Label(master=confirmRegistrationFrame,
+                             text=('\n{} {}\n{}\n{}\n{}\n{}\n{}\n\n{}'
+                                   .format(gegevens[0],gegevens[1],gegevens[2],
+                                           gegevens[3],gegevens[4],gegevens[5],
+                                           gegevens[6],len(csvLezen('fietsen'))+1)),
+                             background = gold,
+                             width=30,
+                             foreground = black,
+                             anchor=W,
+                             justify=LEFT)
+        confirmLabelVariables.grid(row=0, column=1, pady=5)
         acceptRegistrationButton = Button(master=confirmRegistrationFrame,
                       text='Deze gegegevens kloppen.',
                       height=3,
@@ -128,9 +130,6 @@ def registrationDeny():
     
     homebutton()
     confirmRegistrationFrame.grid_remove()
-    acceptRegistrationButton.pack_forget()
-    denyRegistrationButton.pack_forget()
-    confirmLabel.pack_forget()
     registrationFrame.grid(padx=30, pady=30)
     
 def login():
