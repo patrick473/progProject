@@ -98,7 +98,7 @@ def checkRegistration():
                              text=('\n{} {}\n{}\n{}\n{}\n{}\n{}\n\n{}'
                                    .format(gegevens[0],gegevens[1],gegevens[2],
                                            gegevens[3],gegevens[4],gegevens[5],
-                                           gegevens[6],len(csvLezen('fietsen'))+1)),
+                                           gegevens[6],len(csvLezen('fietsen.csv'))+1)),
                              background = gold,
                              width=30,
                              foreground = black,
