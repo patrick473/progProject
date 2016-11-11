@@ -57,16 +57,7 @@ def confirmRegistration():
     gebruikerToevoegen(gegevens)
     hoofdmenu()
 
-# Confirm registration
-
-def checkRegistration2():
-    entries = [voornaamEntry, achternaamEntry, geboorteEntry,
-               telefoonEntry, emailEntry, kleurEntry, wachtwoordEntry]
-    gegevens = []
-    for entry in entries:
-        gegevens.append(entry.get())
-    klopt = True
-
+# Check registration
 def checkRegistration():
 
     entries = [voornaamEntry, achternaamEntry, geboorteEntry,
