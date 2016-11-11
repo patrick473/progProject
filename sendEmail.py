@@ -2,8 +2,8 @@ import smtplib
 
 def sendEmail(receiver, code):
     print('start sending')
-    sender = 'pim_rheiter@live.nl'
-    password = 'Pim76257'
+    sender = 'fietsenstalling@outlook.com'
+    password = 'Stallen1'
     smtpserver = smtplib.SMTP('smtp-mail.outlook.com',587)
     smtpserver.ehlo()
     smtpserver.starttls()
