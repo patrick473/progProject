@@ -11,12 +11,10 @@ from sendEmail import sendEmail
 from random import randint
 
 #statements en variabelen
+fieldAreRight = False
+attempts = 0
 gold='#ffd700'
-blue='#0000FF'
-white='#FFFFFF'
-grey='#666666'
 red='#FF0000'
-black='#000000'
 
 # Functions
 
@@ -58,17 +56,155 @@ def confirmRegistration():
     hoofdmenu()
 
 # Check registration
-def checkRegistration():
+# Confirm registration
+def checkRegistrationValues():
+    global fieldAreRight
+    fieldAreRight =True
+
+    global acceptRegistrationButton
+    global denyRegistrationButton
+    global confirmLabel
 
     entries = [voornaamEntry, achternaamEntry, geboorteEntry,
-               telefoonEntry, emailEntry, kleurEntry, wachtwoordEntry]
+               telefoonEntry, emailEntry, kleurEntry, wachtwoordEntry,
+               wachtwoordCheckEntry]
+
     gegevens = []
-    emptyField = False
+
     for entry in entries:
         gegevens.append(entry.get())
-        if len(gegevens[entries.index(entry)]) == 0:
-            emptyField = True
-    if emptyField == False:
+
+    if len(gegevens[entries.index(entry)]) == 0:
+        fieldAreRight = False
+
+    if len(gegevens[0]) == 0:
+        fieldAreRight = False
+        wrongCharacterLabelVoornaam.grid(row=0, column=2, pady=5, sticky=W)
+    elif len(gegevens[0]) <= 30:
+        for char in gegevens[0]:
+            if char in '+=_()*&^%$#@!1234567890`~\|{}[]/":;><.,/?':
+                fieldAreRight = False
+                wrongCharacterLabelVoornaam.grid(row=0, column=2, pady=5, sticky=W)
+                break
+            else:
+                wrongCharacterLabelVoornaam.grid_forget()
+    else:
+        fieldAreRight = False
+    if len(gegevens[1]) == 0:
+        fieldAreRight == False
+        wrongCharacterLabelAchternaam.grid(row=1, column=2, pady=5, sticky=W)
+    elif len(gegevens[1]) <= 30:
+        for char in gegevens[1]:
+            if char in '+=_()*&^%$#@!1234567890`~\|{}[]/":;><.,/?':
+                fieldAreRight = False
+                wrongCharacterLabelAchternaam.grid(row=1, column=2, pady=5, sticky=W)
+                break
+            else:
+                wrongCharacterLabelAchternaam.grid_forget()
+    else:
+        fieldAreRight = False
+
+    if len(gegevens[2]) == 0:
+        fieldAreRight == False
+        wrongBirthDate.grid(row=2, column=2, pady=5, sticky=W)
+    elif len(gegevens[2]) == 10:
+        for index, char in enumerate(gegevens[2]):
+            if index == 2 or index == 5:
+                if char != '/':
+                    fieldAreRight = False
+                    wrongBirthDate.grid(row=2, column=2, pady=5, sticky=W)
+                    break
+            elif char not in '1234567890':
+                fieldAreRight = False
+                wrongBirthDate.grid(row=2, column=2, pady=5, sticky=W)
+                break
+            else:
+                wrongBirthDate.grid_forget()
+    else:
+        fieldAreRight = False
+        wrongBirthDate.grid(row=2,column=2,pady=5, sticky=W)
+
+    if len(gegevens[3]) == 0:
+        fieldAreRight == False
+        wrongTelephoneNumber.grid(row=3, column=2,pady=5, sticky=W)
+    elif len(gegevens[3]) == 12:
+        for index, char in enumerate(gegevens[3]):
+            if index == 0:
+                if char != '+':
+                    fieldAreRight = False
+                    wrongTelephoneNumber.grid(row=3, column=2,pady=5, sticky=W)
+                    break
+            elif char not in '1234567890':
+                fieldAreRight = False
+                wrongTelephoneNumber.grid(row=3, column=2, pady=5, sticky=W)
+                break
+            else:
+                wrongTelephoneNumber.grid_forget()
+    else:
+        fieldAreRight = False
+        wrongTelephoneNumber.grid(row=3, column=2, pady=5, sticky=W)
+
+    if len(gegevens[4]) == 0:
+        fieldAreRight == False
+        wrongEmailLabel.grid(row=4, column=2, pady=5, sticky=W)
+    else:
+        for char in gegevens[4]:
+            if char == '@':
+                fieldAreRight = True
+                wrongEmailLabel.grid_forget()
+                break
+            else: fieldAreRight = False
+            wrongEmailLabel.grid(row=4, column=2, pady=5, sticky=W)
+
+    if len(gegevens[5]) == 0:
+        fieldAreRight == False
+        wrongCharacterKleur.grid(row=5, column=2, pady=5, sticky=W)
+    elif len(gegevens[5]) <= 30:
+         for char in gegevens[5]:
+            if char in '+=_()*&^%$#@!1234567890`~\|{}[]/":;><.,/?':
+                fieldAreRight = False
+                wrongCharacterKleur.grid(row=5, column=2, pady=5, sticky=W)
+                break
+            else:
+                wrongCharacterKleur.grid_forget()
+    else:
+        fieldAreRight = False
+
+    if 8 <= len(gegevens[6]) <= 16:
+        allchars = [False,False,False]
+        for char in gegevens[6]:
+            if char in 'qwertyuiopasdfghjklzxcvbnm':
+                allchars[0] = True
+            elif char in 'QWERTYUIOPASDFGHJKLZXCVBNM':
+                allchars[1] = True
+            else:
+                allchars[2] = True
+        if allchars == [True,True,True]:
+            wrongPasswordLabel.grid_forget()
+        else:
+            fieldAreRight = False
+            wrongPasswordLabel.grid(row=6, column=2, pady=5, sticky=W)
+    else:
+        fieldAreRight = False
+        wrongPasswordLabel.grid(row=6, column=2, pady=5, sticky=W)
+
+    if gegevens[7] != gegevens[6]:
+        fieldAreRight = False
+        wrongPasswordCheck.grid(row=7, column=2, pady=5, sticky=W)
+    else:
+        wrongPasswordCheck.grid_forget()
+
+def checkRegistration():
+    global fieldAreRight
+    if fieldAreRight == True:
+        fieldAreRight = False
+        entries = [voornaamEntry, achternaamEntry, geboorteEntry,
+                   telefoonEntry, emailEntry, kleurEntry, wachtwoordEntry]
+        gegevens = []
+        for entry in entries:
+            gegevens.append(entry.get())
+            if len(gegevens[entries.index(entry)]) == 0:
+                emptyField = True
         registrationFrame.grid_remove()
         confirmRegistrationFrame.grid(padx=30, pady=30)
         # Gegevens labels
@@ -117,9 +253,8 @@ def checkRegistration():
                                               registrationDeny)
         acceptRegistrationButton.grid(row=9, column=0, pady=5)
         denyRegistrationButton.grid(row=10, column=0, pady=5)
-
     else:
-        confirmButton['text'] = 'Vul alle gegevens in'
+        checkRegistrationValues()
 
 def registrationDeny():
     placeLogOut()
@@ -132,30 +267,38 @@ def login():
     loginFrame.grid(padx=30, pady=30)
 
 def confirmLogin():
+    global attempts
+    if attempts == 3:
+        close()
     global verificationCode
+    global persoonsgegevens
+    persoonsgegevens = jouwGegevensOphalen(fietsNummerLoginEntry.get())
     entries = [fietsNummerLoginEntry, passwordLoginEntry]
     gegevens = []
     for entry in entries:
         gegevens.append(entry.get())
     loggedIn = checkLogin(gegevens[0],gegevens[1])
     if loggedIn == True:
+        attempts = 0
+        wrongLoginLabel.grid_remove()
+        fietsNummerLoginEntry.delete(0,END)
+        passwordLoginEntry.delete(0,END)
         loginFrame.grid_remove()
         verificationFrame.grid(padx=30, pady=30)
         verificationCode = str(randint(0,999999)).zfill(6)
         sendEmail(jouwGegevensOphalen(gegevens[0])[4], verificationCode)
     else:
+        attempts += 1
         wrongLoginLabel.grid(row=0, column=2, pady=5)
 
 def verify():
     global verificationCode
-    entries = [fietsNummerLoginEntry, passwordLoginEntry]
-    gegevens = []
-    for entry in entries:
-        gegevens.append(entry.get())
+    global persoonsgegevens
+    fietsnummer = persoonsgegevens[7]
     if verificationEntry.get() == verificationCode:
         verificationFrame.grid_remove()
         loggedInFrame.grid(padx=30, pady=30)
-        if fietsGestald(gegevens[0]) == True:
+        if fietsGestald(fietsnummer) == True:
             stallingButton.grid_remove()
             ophaalButton.grid(row=2,column=0, pady=5)
         else:
@@ -165,16 +308,18 @@ def verify():
         verificationFailedLabel.grid(row=0, column=1, pady=5)
 
 def fietsStallen():
-    fietsnummer = fietsNummerLoginEntry.get()
+    global persoonsgegevens
+    fietsnummer = persoonsgegevens[7]
     fietsNummerStallen(jouwGegevensOphalen(fietsnummer))
     loggedInFrame.grid_remove()
     stalFrame.grid()
     logOutButton.place_forget()
 
 def jouwGegevens():
+    global persoonsgegevens
     loggedInFrame.grid_remove()
     jouwGegevensFrame.grid(padx=30, pady=30)
-    gegevens = jouwGegevensOphalen(fietsNummerLoginEntry.get())
+    gegevens = persoonsgegevens
     ########## Jouw gegevens widgets ##########
     # Gegevens labels
     voornaamLabel = createLabel(jouwGegevensFrame, 'Voornaam:')
@@ -210,10 +355,16 @@ def jouwGegevens():
 
 # Haalt fietsen uit het csv bestand
 def fietsOphalen():
-    fietsOphalenCSV(fietsNummerLoginEntry.get())
+    global persoonsgegevens
+    fietsnummer = persoonsgegevens[7]
+    fietsOphalenCSV(fietsnummer)
     loggedInFrame.grid_remove()
     ophaalFrame.grid()
     logOutButton.place_forget()
+
+def previous():
+    jouwGegevensFrame.grid_remove()
+    loggedInFrame.grid(padx=30, pady=30)
 
 # Main window
 root = Tk()
@@ -302,7 +453,7 @@ infoButton.grid(row=1,column=0,pady=5)
 # Registration Labels
 registrationLabels = ['Voornaam:','Achternaam:','Geboortedatum (DD/MM/YYY)',
                       'Telefoonnummer:','E-mailadres:','Kleur van je fiets:',
-                      'Wachtwoord:']
+                      'Wachtwoord:','Herhaal wachtwaard:']
 for index, text in enumerate(registrationLabels):
     registrationLabel = createLabel(registrationFrame, text)
     registrationLabel.grid(row=index, column=0, pady=5)
@@ -315,12 +466,15 @@ telefoonEntry = createEntry(registrationFrame)
 emailEntry = createEntry(registrationFrame)
 kleurEntry = createEntry(registrationFrame)
 wachtwoordEntry = createEntry(registrationFrame, '*')
+wachtwoordCheckEntry = createEntry(registrationFrame, '*')
 
 registrationEntries = [voornaamEntry,achternaamEntry,geboorteEntry,
-                       telefoonEntry,emailEntry,kleurEntry,wachtwoordEntry]
+                       telefoonEntry,emailEntry,kleurEntry,wachtwoordEntry,
+                       wachtwoordCheckEntry]
 for index, entry in enumerate(registrationEntries):
     entry.grid(row=index, column=1, pady=5)
 
+telefoonEntry.insert(END, '+31')
 # Confirm button
 confirmButton = createButton(registrationFrame, 'Bevestigen', checkRegistration)
 confirmButton.grid(row=99,column=1,pady=5)
@@ -334,6 +488,22 @@ stalConfirmLabel.grid(row=5, column=0, pady=30,padx=30)
 ophaalConfirmLabel = createLabel(ophaalFrame, 'Je fiets wordt nu opgehaald.\n\
 Sluit het programma af.')
 ophaalConfirmLabel.grid(row=5, column=0, pady=30,padx=30)
+
+# returnButton
+returnFrames = [jouwGegevensFrame]
+for frame in returnFrames:
+    returnButton = createButton(frame, 'Terug', previous)
+    returnButton.grid(row=50, column =0, pady=5)
+
+wrongCharacterLabelVoornaam = createLabel(registrationFrame, 'Vul hier je voornaam in. Gebruik geen speciale tekens')
+wrongCharacterLabelAchternaam = createLabel(registrationFrame, 'Vul hier je achternaam in. Gebruik geen speciale tekens')
+wrongBirthDate = createLabel(registrationFrame, 'Vul uw geboortedatum in in de vorm DD/MM/YYYY')
+wrongTelephoneNumber = createLabel(registrationFrame, 'Dit is geen geldig telefoonnummer. Begin uw nummer met +31')
+wrongCharacterKleur = createLabel(registrationFrame, 'Vul hier de kleur van uw fiets in. Gebruik geen speciale tekens')
+wrongPasswordLabel = createLabel(registrationFrame, 'Een wachtwoord bestaat uit 8 - 16 tekens. Gebruik minstens een '
+                                                    'kleine letter, een grote letter en een cijfer of speciaal teken')
+wrongPasswordCheck = createLabel(registrationFrame, 'Wachtwoorden komen niet overeen')
+wrongEmailLabel = createLabel(registrationFrame, 'Vul een geldig e-mailadres in. Je hebt dit adres nodig om in te loggen')
 
 # Main loop
 root.mainloop()
