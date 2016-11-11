@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5c6e79d-44ec-4de8-b109-9f3e9a2027c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sendEmail.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/csvHandler.py" afterPath="$PROJECT_DIR$/csvHandler.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hoofdscherm.py" afterPath="$PROJECT_DIR$/hoofdscherm.py" />
     </list>
     <ignored path="untitled1.iws" />
@@ -25,23 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="csvwriter.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csvwriter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="24" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beginscherm login.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="beginscherm login.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/beginscherm login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="529" column="39" selection-start-line="529" selection-start-column="39" selection-end-line="529" selection-end-column="39" />
+            <state relative-caret-position="280">
+              <caret line="305" column="28" selection-start-line="305" selection-start-column="28" selection-end-line="305" selection-end-column="28" />
               <folding>
                 <element signature="e#124#147#0" expanded="true" />
               </folding>
@@ -49,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hoofdscherm.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hoofdscherm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hoofdscherm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="343" column="0" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="167" column="31" selection-start-line="167" selection-start-column="31" selection-end-line="167" selection-end-column="31" />
               <folding>
                 <element signature="e#124#148#0" expanded="true" />
               </folding>
@@ -64,11 +51,9 @@
       <file leaf-file-name="csvHandler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csvHandler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
+            <state relative-caret-position="510">
               <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,7 +61,7 @@
       <file leaf-file-name="createWidgets.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/createWidgets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
+            <state relative-caret-position="330">
               <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
               <folding />
             </state>
@@ -137,12 +122,12 @@
         <option value="$PROJECT_DIR$/testtimmain.py" />
         <option value="$PROJECT_DIR$/Stalling.csv" />
         <option value="$PROJECT_DIR$/csvwriter.py" />
-        <option value="$PROJECT_DIR$/fietsen.csv" />
         <option value="$PROJECT_DIR$/beginscherm login.py" />
         <option value="$PROJECT_DIR$/createWidgets.py" />
         <option value="$PROJECT_DIR$/sendEmail.py" />
         <option value="$PROJECT_DIR$/csvHandler.py" />
         <option value="$PROJECT_DIR$/hoofdscherm.py" />
+        <option value="$PROJECT_DIR$/fietsen.csv" />
       </list>
     </option>
   </component>
@@ -205,58 +190,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.beginscherm login">
-    <configuration default="false" name="beginschermv2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="untitled1" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beginschermv2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="beginschermv2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="untitled1" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beginschermv2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="fietsStallen" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="untitled1" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fietsStallen.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.hoofdscherm">
     <configuration default="false" name="Beginscherm met login" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -304,6 +238,40 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="progProject" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/csvwriter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="sendEmail" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="progProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sendEmail.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="hoofdscherm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="progProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hoofdscherm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -455,21 +423,20 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Python.beginschermv2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.beginschermv2" />
-      <item index="2" class="java.lang.String" itemvalue="Python.fietsStallen" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Beginscherm met login" />
-      <item index="4" class="java.lang.String" itemvalue="Python.beginscherm login" />
-      <item index="5" class="java.lang.String" itemvalue="Python.csvwriter" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.Beginscherm met login" />
+      <item index="1" class="java.lang.String" itemvalue="Python.beginscherm login" />
+      <item index="2" class="java.lang.String" itemvalue="Python.csvwriter" />
+      <item index="3" class="java.lang.String" itemvalue="Python.sendEmail" />
+      <item index="4" class="java.lang.String" itemvalue="Python.hoofdscherm" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.beginscherm login" />
-        <item index="1" class="java.lang.String" itemvalue="Python.csvwriter" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Beginscherm met login" />
-        <item index="3" class="java.lang.String" itemvalue="Python.beginschermv2" />
-        <item index="4" class="java.lang.String" itemvalue="Python.fietsStallen" />
+        <item index="0" class="java.lang.String" itemvalue="Python.hoofdscherm" />
+        <item index="1" class="java.lang.String" itemvalue="Python.sendEmail" />
+        <item index="2" class="java.lang.String" itemvalue="Python.beginscherm login" />
+        <item index="3" class="java.lang.String" itemvalue="Python.csvwriter" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Beginscherm met login" />
       </list>
     </recent_temporary>
   </component>
@@ -486,17 +453,17 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12484157" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32814527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947367" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1465629" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1465629" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294423" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -528,6 +495,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/fietsen.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="89" selection-start-line="3" selection-start-column="89" selection-end-line="3" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/csvwriter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -829,14 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fietsen.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="89" selection-start-line="3" selection-start-column="89" selection-end-line="3" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csvwriter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -847,28 +814,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stalling.csv">
+    <entry file="file://$PROJECT_DIR$/fietsen.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="3" column="89" selection-start-line="3" selection-start-column="89" selection-end-line="3" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beginscherm login.py">
+    <entry file="file://$PROJECT_DIR$/Stalling.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="529" column="39" selection-start-line="529" selection-start-column="39" selection-end-line="529" selection-end-column="39" />
-          <folding>
-            <element signature="e#124#147#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/createWidgets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        <state relative-caret-position="20">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -881,22 +838,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/createWidgets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/csvHandler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
+        <state relative-caret-position="510">
           <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hoofdscherm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="343" column="0" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="167" column="31" selection-start-line="167" selection-start-column="31" selection-end-line="167" selection-end-column="31" />
           <folding>
             <element signature="e#124#148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beginscherm login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="305" column="28" selection-start-line="305" selection-start-column="28" selection-end-line="305" selection-end-column="28" />
+          <folding>
+            <element signature="e#124#147#0" expanded="true" />
           </folding>
         </state>
       </provider>

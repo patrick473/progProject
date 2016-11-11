@@ -32,6 +32,7 @@ def hoofdmenu():
     loginFrame.grid_remove()
     jouwGegevensFrame.grid_remove()
     loggedInFrame.grid_remove()
+    verificationFrame.grid_remove()
     mainFrame.grid(padx=30, pady=30)
     logOutButton.place_forget()
 
@@ -52,22 +53,25 @@ def confirmRegistration():
     gegevens = []
     for entry in entries:
         gegevens.append(entry.get())
-        if len(gegevens[entries.index(entry)]) == 0:
-            emptyField = True
         entry.delete(0,END)
     gebruikerToevoegen(gegevens)
     hoofdmenu()
 
 # Confirm registration
-def checkRegistration():
-    global acceptRegistrationButton
-    global denyRegistrationButton
-    global confirmLabel
+
+def checkRegistration2():
     entries = [voornaamEntry, achternaamEntry, geboorteEntry,
                telefoonEntry, emailEntry, kleurEntry, wachtwoordEntry]
-
     gegevens = []
+    for entry in entries:
+        gegevens.append(entry.get())
+    klopt = True
 
+def checkRegistration():
+
+    entries = [voornaamEntry, achternaamEntry, geboorteEntry,
+               telefoonEntry, emailEntry, kleurEntry, wachtwoordEntry]
+    gegevens = []
     emptyField = False
     for entry in entries:
         gegevens.append(entry.get())
@@ -87,10 +91,11 @@ def checkRegistration():
         emailLabel = createLabel(confirmRegistrationFrame, 'E-mailadres:')
         kleurLabel = createLabel(confirmRegistrationFrame,'Kleur van je fiets:')
         passwordLabel = createLabel(confirmRegistrationFrame, 'Wachtwoord:')
+        fietsnummerLabel = createLabel(confirmRegistrationFrame, 'Fietsnummer:')
 
         gegevensLabels = [kloptDitLabel,voornaamLabel,achternaamLabel,
                           geboorteLabel,telefoonLabel,emailLabel,kleurLabel,
-                          passwordLabel]
+                          passwordLabel, fietsnummerLabel]
         for index, label in enumerate(gegevensLabels):
             label.grid(row=index, column=0, pady=5)
 
