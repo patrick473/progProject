@@ -1,6 +1,6 @@
 import csv
 import time
-
+from random import randint
 def fietsOphalenCSV(fietsnummer):
     rows = csvLezen('Stalling.csv')
     with open('Stalling.csv', 'w', newline='') as myCSVFile:

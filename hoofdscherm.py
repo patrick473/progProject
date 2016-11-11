@@ -7,6 +7,9 @@ except ImportError:
 from csvHandler import *
 from sys import exit
 from createWidgets import *
+from sendEmail import sendEmail
+from random import randint
+
 #statements en variabelen
 gold='#ffd700'
 blue='#0000FF'
@@ -33,12 +36,12 @@ def hoofdmenu():
     logOutButton.place_forget()
 
 # Create home button
-def logOut():
+def placeLogOut():
     logOutButton.place(rely=1, relx=0, x=30, y=-30, anchor=SW)
 
 # Open register frame
 def register():
-    logOut()
+    placeLogOut()
     mainFrame.grid_remove()
     registrationFrame.grid(padx=30, pady=30)
 
@@ -123,16 +126,17 @@ def checkRegistration():
         confirmButton['text'] = 'Vul alle gegevens in'
 
 def registrationDeny():
-    logOutn()
+    placeLogOut()
     confirmRegistrationFrame.grid_remove()
     registrationFrame.grid(padx=30, pady=30)
 
 def login():
-    logOut()
+    placeLogOut()
     mainFrame.grid_remove()
     loginFrame.grid(padx=30, pady=30)
 
 def confirmLogin():
+    global verificationCode
     entries = [fietsNummerLoginEntry, passwordLoginEntry]
     gegevens = []
     for entry in entries:
@@ -140,6 +144,20 @@ def confirmLogin():
     loggedIn = checkLogin(gegevens[0],gegevens[1])
     if loggedIn == True:
         loginFrame.grid_remove()
+        verificationFrame.grid(padx=30, pady=30)
+        verificationCode = str(randint(0,999999)).zfill(6)
+        sendEmail(jouwGegevensOphalen(gegevens[0])[4], verificationCode)
+    else:
+        wrongLoginLabel.grid(row=0, column=2, pady=5)
+
+def verify():
+    global verificationCode
+    entries = [fietsNummerLoginEntry, passwordLoginEntry]
+    gegevens = []
+    for entry in entries:
+        gegevens.append(entry.get())
+    if verificationEntry.get() == verificationCode:
+        verificationFrame.grid_remove()
         loggedInFrame.grid(padx=30, pady=30)
         if fietsGestald(gegevens[0]) == True:
             stallingButton.grid_remove()
@@ -148,7 +166,7 @@ def confirmLogin():
             ophaalButton.grid_remove()
             stallingButton.grid(row=2,column=0, pady=5)
     else:
-        wrongLoginLabel.grid(row=0, column=2, pady=5)
+        verificationFailedLabel.grid(row=0, column=1, pady=5)
 
 def fietsStallen():
     fietsnummer = fietsNummerLoginEntry.get()
@@ -228,6 +246,8 @@ loginFrame = Frame(root, bg=gold)
 loggedInFrame = Frame(root, bg=gold)
 # Jouw gegevens Frame
 jouwGegevensFrame = Frame(root, bg=gold)
+# Verification Frame
+verificationFrame = Frame(root, bg=gold)
 
 ########## Main window widgets ##########
 registrationButton = createButton(mainFrame, 'Registreren', register)
@@ -264,6 +284,16 @@ passwordLoginEntry.grid(row=1, column=1, pady=5)
 # Confirm button
 confirmLoginButton = createButton(loginFrame, 'Inloggen', confirmLogin)
 confirmLoginButton.grid(row=2, column=1, pady=5)
+
+########## Verification widgets ##########
+verificationLabel = createLabel(verificationFrame, 'Verificatiecode:')
+verificationEntry = createEntry(verificationFrame)
+verificationButton = createButton(verificationFrame, 'Verifiëren', verify)
+verificationFailedLabel = createLabel(verificationFrame,
+                                      'Deze verificatiecode is onjuist')
+verificationLabel.grid(row=0, column=0, pady=5)
+verificationEntry.grid(row=0, column=1, pady=5)
+verificationButton.grid(row=1, column=1, pady=5)
 
 ########## Logged in widgets ##########
 stallingButton = createButton(loggedInFrame, 'Fiets stallen', fietsStallen)
